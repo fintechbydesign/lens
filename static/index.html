@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <script src='/socket.io/socket.io.js'></script>
+        <script>
+            var socket = io();
+
+
+            socket.on('data', function(data) {
+                addMessage(JSON.stringify(data));
+            });
+            socket.on('error', console.error.bind(console));
+            socket.on('message', console.log.bind(console));
+
+            function addMessage(message) {
+            	var msg = "";
+            	switch(message) {
+				    case '51':
+				        msg = "Green Button";
+				        break;
+				    case '50':
+				        msg = "Blue Button";
+				        break;
+				    case '49':
+				        msg = "Red Button";
+				        break;    
+				    default:
+				        code block
+				}
+            	document.getElementById("messages").innerHTML = msg;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id='messages'>Hello</h1>
+    </body>
+</html>
