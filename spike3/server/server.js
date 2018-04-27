@@ -17,17 +17,22 @@ const socketsServer = io(httpServer, socketsOptions);
 const webRoot = path.resolve(__dirname, '../client/build');
 app.use("/", express.static(webRoot));
 
-const socketsServer = io(httpServer, socketsOptions);
-
-socketsServer.on('connection', (socket) => {
-  console.log('wonderwall connected');
-
-})
+let num = 0;
+const sendMessage = () => {
+  num++;
+  socketsServer.emit('event', {
+    message: `Message number ${num}`
+  });
+  setTimeout(sendMessage, 2000);
+}
 
 httpServer.listen(config.port, () => console.log(`Server listening on port ${config.port}`));
+
+sendMessage();
 
 /* how to let the clients know of an event
   const theEvent = {};
   socketsServer.emit('event', theEvent);
  */
+
 
