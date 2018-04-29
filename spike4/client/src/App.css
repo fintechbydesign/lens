@@ -20,8 +20,22 @@ html, body, #root {
   height: 99%;
 }
 
-.flexContainer {
+.flexContainerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.flexContainerColumn {
   display: flex;
   flex-direction: column;
+}
+
+.flexFixedSize {
+  flex: 0 0 content;
+}
+
+.flexDynamicSize {
+  flex: 1 1 auto;
 }
 

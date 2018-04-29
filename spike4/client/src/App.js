@@ -1,5 +1,8 @@
 import io from 'socket.io-client';
 import React, { Component } from 'react';
+import BigButton from './BigButton';
+import SmallButton from './SmallButton';
+import Spacer from './Spacer';
 import './App.css';
 
 const methods = [
@@ -32,10 +35,31 @@ class App extends Component {
 
   render() {
     const events = this.state.events.map(event => (<div>{event}</div>));
+    const buttonGroup = (
+      <div className='flexContainerColumn'>
+        <Spacer style={{'margin-top':'75px'}}/>
+        <SmallButton colour='red'/>
+        <SmallButton colour='green'/>
+        <SmallButton colour='blue'/>
+      </div>
+    );
     return (
-      <div className='border container'>
-        <div className='border container flexContainer'>
-          {events}
+      <div id='left-buttons-container' className='container flexContainerRow'>
+        <div id='left-buttons-area' className='flexFixSize flexContainerColumn'>
+          {buttonGroup}
+          {buttonGroup}
+          {buttonGroup}
+        </div>
+        <div className='flexContainerColumn flexDynamicSize'>
+          <div id='chat-outside-edge' className='border container flexDynamicSize'>
+            <div id='chat-inside-edge' className='border container flexContainerColumn'>
+              {events}
+            </div>
+          </div>
+          <div id='bottom-buttons-area' className='flexFixSize flexContainerRow'>
+            <BigButton text='OK'/>
+            <BigButton text='Cancel'/>
+          </div>
         </div>
       </div>
     );
