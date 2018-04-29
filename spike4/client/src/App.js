@@ -6,7 +6,8 @@ import Spacer from './Spacer';
 import './App.css';
 
 const methods = [
-  'eventReceived'
+  'eventReceived',
+  'toggleButtons'
 ];
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      events: ['page1']
+      events: ['page1'],
+      showButtons: false
     };
     methods.forEach((method) => {
       this[method] = this[method].bind(this);
@@ -24,6 +26,11 @@ class App extends Component {
   componentDidMount () {
     const socket = io();
     socket.on('event', this.eventReceived);
+    window.addEventListener('keyup', (event) => {
+      if (event.key === 'b') {
+        this.toggleButtons();
+      }
+    });
   }
 
   eventReceived (event) {
@@ -31,6 +38,13 @@ class App extends Component {
       ...this.state,
       events: [...this.state.events, event]
     });
+  }
+
+  toggleButtons () {
+    this.setState({
+      ...this.state,
+      showButtons: !this.state.showButtons
+    })
   }
 
   render() {
@@ -43,23 +57,31 @@ class App extends Component {
         <SmallButton colour='blue'/>
       </div>
     );
-    return (
-      <div id='left-buttons-container' className='container flexContainerRow'>
+    const leftButtonsArea = this.state.showButtons ?
+      (
         <div id='left-buttons-area' className='flexFixSize flexContainerColumn'>
           {buttonGroup}
           {buttonGroup}
           {buttonGroup}
         </div>
+      ) : null;
+    const bottomButtonsArea = this.state.showButtons ?
+      (
+        <div id='bottom-buttons-area' className='flexFixSize flexContainerRow'>
+          <BigButton text='OK'/>
+          <BigButton text='Cancel'/>
+        </div>
+      ) : null;
+    return (
+      <div id='left-buttons-container' className='container flexContainerRow'>
+        {leftButtonsArea}
         <div className='flexContainerColumn flexDynamicSize'>
           <div id='chat-outside-edge' className='border container flexDynamicSize'>
             <div id='chat-inside-edge' className='border container flexContainerColumn'>
               {events}
             </div>
           </div>
-          <div id='bottom-buttons-area' className='flexFixSize flexContainerRow'>
-            <BigButton text='OK'/>
-            <BigButton text='Cancel'/>
-          </div>
+          {bottomButtonsArea}
         </div>
       </div>
     );
