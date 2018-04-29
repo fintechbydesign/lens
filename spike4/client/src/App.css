@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.border {
+  border: solid;
+  padding: 3px;
+  margin: 3px;
+  border-radius: 15px;
+}
+
+.container {
+  height: 99%;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+}
+

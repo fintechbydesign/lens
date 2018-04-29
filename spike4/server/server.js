@@ -17,18 +17,10 @@ const socketsServer = io(httpServer, socketsOptions);
 const webRoot = path.resolve(__dirname, '../client/build');
 app.use("/", express.static(webRoot));
 
-let num = 0;
-const sendMessage = () => {
-  socketsServer.emit('event', 'button 1 ck]')
-}
+const sendMessage = socketsServer.emit.bind(null, 'event');
 
 httpServer.listen(config.port, () => console.log(`Server listening on port ${config.port}`));
 
-sendMessage();
-
-/* how to let the clients know of an event
-  const theEvent = {};
-  socketsServer.emit('event', theEvent);
- */
+sendMessage('hello');
 
 

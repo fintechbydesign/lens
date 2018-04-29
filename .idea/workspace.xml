@@ -2,24 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="567649b4-4383-42dd-8b32-721096103ca9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/client/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/server/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/server/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spike3/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spike2/client/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spike2/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/spike2/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spike2/client/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spike2/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/spike2/server/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/client/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/server/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/server/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spike4/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spike3/server/.server.js.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spike3/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/spike3/server/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +30,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spike3/client/src/App.js">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spike4/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="345">
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spike4/client/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -42,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spike3/server/server.js">
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spike4/client/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+            <state relative-caret-position="405">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -61,8 +70,14 @@
       <list>
         <option value="$PROJECT_DIR$/spike3/client/package.json" />
         <option value="$PROJECT_DIR$/spike2/server/server.js" />
-        <option value="$PROJECT_DIR$/spike3/server/server.js" />
         <option value="$PROJECT_DIR$/spike3/client/src/App.js" />
+        <option value="$PROJECT_DIR$/spike3/server/server.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/spike4/server/server.js" />
+        <option value="$PROJECT_DIR$/spike4/client/src/index.js" />
+        <option value="$PROJECT_DIR$/spike4/client/src/App.js" />
+        <option value="$PROJECT_DIR$/spike4/client/src/App.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -81,8 +96,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/spike2/client/node_modules" />
     <handled-path value="$PROJECT_DIR$/spike2/server/node_modules" />
-    <handled-path value="$PROJECT_DIR$/spike3/client/node_modules" />
-    <handled-path value="$PROJECT_DIR$/spike3/server/node_modules" />
+    <handled-path value="$PROJECT_DIR$/spike4/client/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -1612,6 +1626,8 @@
       <path value="$PROJECT_DIR$/spike2/server/package.json" />
       <path value="$PROJECT_DIR$/spike3/client/package.json" />
       <path value="$PROJECT_DIR$/spike3/server/package.json" />
+      <path value="$PROJECT_DIR$/spike4/client/package.json" />
+      <path value="$PROJECT_DIR$/spike4/server/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
@@ -1634,25 +1650,54 @@
             <path>
               <item name="lens" type="b2602c69:ProjectViewProjectNode" />
               <item name="lens" type="462c0819:PsiDirectoryNode" />
-              <item name="spike3" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lens" type="b2602c69:ProjectViewProjectNode" />
               <item name="lens" type="462c0819:PsiDirectoryNode" />
-              <item name="spike3" type="462c0819:PsiDirectoryNode" />
+              <item name="spike2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lens" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lens" type="462c0819:PsiDirectoryNode" />
+              <item name="spike2" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lens" type="b2602c69:ProjectViewProjectNode" />
               <item name="lens" type="462c0819:PsiDirectoryNode" />
-              <item name="spike3" type="462c0819:PsiDirectoryNode" />
+              <item name="spike2" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lens" type="b2602c69:ProjectViewProjectNode" />
               <item name="lens" type="462c0819:PsiDirectoryNode" />
-              <item name="spike3" type="462c0819:PsiDirectoryNode" />
+              <item name="spike2" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lens" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lens" type="462c0819:PsiDirectoryNode" />
+              <item name="spike4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lens" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lens" type="462c0819:PsiDirectoryNode" />
+              <item name="spike4" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lens" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lens" type="462c0819:PsiDirectoryNode" />
+              <item name="spike4" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lens" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lens" type="462c0819:PsiDirectoryNode" />
+              <item name="spike4" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -1673,13 +1718,13 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/spike3/client" />
       <recent name="$PROJECT_DIR$/spike3" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1737,6 +1782,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" />
@@ -1775,20 +1821,8 @@
     <entry file="file://$PROJECT_DIR$/spike2/client/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spike2/client/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/spike3/client/src/registerServiceWorker.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spike2/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spike2/client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1813,13 +1847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spike3/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spike3/client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1827,6 +1854,99 @@
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="105">
+            <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike3/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike2/client/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike1/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike4/server/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike4/server/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike4/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike4/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike2/client/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike2/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike4/client/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="54" lean-forward="true" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spike4/client/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
