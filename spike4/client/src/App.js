@@ -1,12 +1,14 @@
 import io from 'socket.io-client';
 import React, { Component } from 'react';
-import BigButton from './BigButton';
-import SmallButton from './SmallButton';
+import { scroller } from 'react-scroll';
+import BottomButtons from './BottomButtons';
+import LeftButtons from './LeftButtons';
 import Spacer from './Spacer';
 import './App.css';
 
 const methods = [
   'eventReceived',
+  'scrollToNextPage',
   'toggleButtons'
 ];
 
@@ -15,7 +17,9 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      events: ['page1'],
+      currentPage: 'page1',
+      events: [],
+      pages: ['page1', 'page2', 'page3', 'page4'],
       showButtons: false
     };
     methods.forEach((method) => {
@@ -40,6 +44,31 @@ class App extends Component {
     });
   }
 
+  scrollToNextPage () {
+    let nextPage;
+    switch (this.state.currentPage) {
+      case 'page1':
+        nextPage = 'page2';
+        break;
+      case 'page2':
+        nextPage = 'page3';
+        break;
+      case 'page3':
+        nextPage = 'page4';
+        break;
+      default:
+        nextPage = 'page1';
+    }
+    this.setState({
+      ...this.state,
+      currentPage: nextPage,
+    });
+    scroller.scrollTo(nextPage, {
+      duration: 0,
+      smooth: 'linear'
+    });
+  }
+
   toggleButtons () {
     this.setState({
       ...this.state,
@@ -48,40 +77,24 @@ class App extends Component {
   }
 
   render() {
-    const events = this.state.events.map(event => (<div>{event}</div>));
-    const buttonGroup = (
-      <div className='flexContainerColumn'>
-        <Spacer style={{'margin-top':'75px'}}/>
-        <SmallButton colour='red'/>
-        <SmallButton colour='green'/>
-        <SmallButton colour='blue'/>
+    const pages = this.state.pages.map(page => (
+      <div name={page}>
+        {page}
+        <Spacer style={{'margin-top':'50px'}}/>
       </div>
-    );
-    const leftButtonsArea = this.state.showButtons ?
-      (
-        <div id='left-buttons-area' className='flexFixSize flexContainerColumn'>
-          {buttonGroup}
-          {buttonGroup}
-          {buttonGroup}
-        </div>
-      ) : null;
-    const bottomButtonsArea = this.state.showButtons ?
-      (
-        <div id='bottom-buttons-area' className='flexFixSize flexContainerRow'>
-          <BigButton text='OK'/>
-          <BigButton text='Cancel'/>
-        </div>
-      ) : null;
+    ));
+    const leftButtons = this.state.showButtons ? (<LeftButtons />) : null;
+    const bottomButtons = this.state.showButtons ? (<BottomButtons nextClick={this.scrollToNextPage} />) : null;
     return (
       <div id='left-buttons-container' className='container flexContainerRow'>
-        {leftButtonsArea}
+        {leftButtons}
         <div className='flexContainerColumn flexDynamicSize'>
           <div id='chat-outside-edge' className='border container flexDynamicSize'>
             <div id='chat-inside-edge' className='border container flexContainerColumn'>
-              {events}
+              {pages}
             </div>
           </div>
-          {bottomButtonsArea}
+          {bottomButtons}
         </div>
       </div>
     );
