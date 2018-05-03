@@ -19,7 +19,7 @@ app.use("/", express.static(webRoot));
 
 let num = 0;
 const sendMessage = () => {
-  socketsServer.emit('event', 'button 1 ck]')
+  socketsServer.emit('event', 'button 1 clicked')
 }
 
 httpServer.listen(config.port, () => console.log(`Server listening on port ${config.port}`));
