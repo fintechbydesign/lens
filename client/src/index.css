@@ -9,11 +9,10 @@ html, body, #root {
   overflow: hidden;
 }
 
-.border {
-  border: solid;
-  padding: 3px;
-  margin: 3px;
-  border-radius: 15px;
+svg text {
+  color: black;
+  text-anchor: middle;
+  font-family: arial;
 }
 
 .container {

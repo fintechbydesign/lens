@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 import React, { Component } from 'react';
-import { scroller } from 'react-scroll';
+import { Element, scroller } from 'react-scroll';
 import BottomButtons from './BottomButtons';
 import LeftButtons from './LeftButtons';
 import Spacer from './Spacer';
@@ -63,10 +63,12 @@ class App extends Component {
       ...this.state,
       currentPage: nextPage,
     });
-    scroller.scrollTo(nextPage, {
+    const scrollOptions = {
+      containerId: 'chat-inside-edge',
       duration: 0,
       smooth: 'linear'
-    });
+    };
+    scroller.scrollTo(nextPage, scrollOptions);
   }
 
   toggleButtons () {
@@ -78,9 +80,10 @@ class App extends Component {
 
   render() {
     const pages = this.state.pages.map(page => (
-      <div name={page}>
+      <div>
+        <Element name={page} />
         {page}
-        <Spacer style={{'margin-top':'50px'}}/>
+        <Spacer style={{'margin-top':'500px'}}/>
       </div>
     ));
     const leftButtons = this.state.showButtons ? (<LeftButtons />) : null;
@@ -89,8 +92,8 @@ class App extends Component {
       <div id='left-buttons-container' className='container flexContainerRow'>
         {leftButtons}
         <div className='flexContainerColumn flexDynamicSize'>
-          <div id='chat-outside-edge' className='border container flexDynamicSize'>
-            <div id='chat-inside-edge' className='border container flexContainerColumn'>
+          <div id='chat-outside-edge' className='border container flexContainerColumn flexDynamicSize'>
+            <div id='chat-inside-edge' className='border container flexContainerColumn scrollable'>
               {pages}
             </div>
           </div>
