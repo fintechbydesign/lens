@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: arial;
 }
 
 html, body, #root {
@@ -12,7 +13,6 @@ html, body, #root {
 svg text {
   color: black;
   text-anchor: middle;
-  font-family: arial;
 }
 
 .container {
@@ -38,7 +38,9 @@ svg text {
   flex: 1 1 auto;
 }
 
-.scrollable {
-  overflow: hidden;
+.speechBubble {
+  border: 4px solid lightgray;
+  border-radius: 15px;
+  padding: 15px;
 }
 

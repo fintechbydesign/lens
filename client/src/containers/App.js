@@ -1,3 +1,7 @@
+/*
+ Overall coordination between components
+ */
+
 import React, { Component } from 'react';
 import { addKeyboardListener } from '../hardware/keyboard';
 import Buttons from './Buttons';
@@ -6,27 +10,13 @@ import { listenForArduino } from '../hardware/arduino';
 import Pages from './Pages';
 import { scroller } from 'react-scroll';
 import SubmitButton from '../components/SubmitButton';
+import {
+  fastScrollOptions,
+  initialState,
+  methods,
+  pageStates,
+  slowScrollOptions } from './AppConstants';
 
-const methods = Object.freeze([
-  'nextPage',
-  'reset',
-  'toggleButtons'
-]);
-
-const scrollOptions = Object.freeze({
-  containerId: 'pages',
-  duration: 1000,
-  smooth: 'easeInOutCubic'
-});
-
-const initialState = Object.freeze({
-  currentPage: 0,
-  showButtons: false
-});
-
-/*
- Overall coordination between components
- */
 class App extends Component {
 
   constructor (props) {
@@ -37,15 +27,34 @@ class App extends Component {
   }
 
   componentDidMount() {
-    listenForArduino({
+    const keyToFunctionMap = {
       b: this.toggleButtons,
       s: this.nextPage,
       r: this.reset
-    });
+    };
+    for (let index = 1; index < 10; index++) {
+      keyToFunctionMap[String(index)] = this.buttonSelected.bind(this, index);
+    }
+    listenForArduino(keyToFunctionMap);
+  }
+
+  buttonSelected (index) {
+    if (this.state.buttons.enable[index]) {
+      const newOn = [...this.state.buttons.on];
+      newOn[index] = !newOn[index];
+      this.setState({
+        ...this.state,
+        buttons: {
+          ...this.state.buttons,
+          on: newOn
+        }
+      });
+    }
   }
 
   reset () {
     console.log('reset');
+    scroller.scrollTo('page0', fastScrollOptions);
     this.setState({
       ...initialState,
       showButtons: this.state.showButtons
@@ -54,10 +63,14 @@ class App extends Component {
 
   nextPage () {
     const nextPage = this.state.currentPage === 3 ? 0 : this.state.currentPage + 1;
-    scroller.scrollTo(`page${nextPage}`, scrollOptions);
+    scroller.scrollTo(`page${nextPage}`, slowScrollOptions);
     this.setState({
       ...this.state,
-      currentPage: nextPage
+      currentPage: nextPage,
+      buttons: {
+        ... this.state.buttons,
+        enable: [...pageStates[nextPage].buttonEnablement]
+      }
     });
   }
 
@@ -68,17 +81,44 @@ class App extends Component {
     });
   }
 
-  render() {
-    const buttons = this.state.showButtons ? (<Buttons reset={this.reset} />) : null;
-    const submit = this.state.showButtons ? <SubmitButton text='(s)ubmit button' onClick={this.nextPage} /> : null;
+  renderButtons () {
+    if (!this.state.showButtons) {
+      return null;
+    }
+    const props = {
+      buttons: this.state.buttons,
+      buttonSelected: this.buttonSelected,
+      reset: this.reset
+    };
+    return (<Buttons {...props} />);
+  }
 
+  renderInstruction () {
+    const props = {
+      text: pageStates[this.state.currentPage].instruction
+    };
+    return (<ButtonInstruction {...props} />);
+  }
+
+  renderSubmit () {
+    if (!this.state.showButtons) {
+      return null;
+    }
+    const props = {
+      text: '(s)ubmit button',
+      onClick: this.nextPage
+    };
+    return (<SubmitButton {...props} />);
+  }
+
+  render() {
     return (
       <div className='container flexContainerRow'>
-        {buttons}
+        {this.renderButtons()}
         <div className='flexDynamicSize container flexContainerColumn'>
-          <Pages />
-          <ButtonInstruction text='Button Instruction goes here' />
-          {submit}
+          <Pages buttons={this.state.buttons} />
+          {this.renderInstruction()}
+          {this.renderSubmit()}
         </div>
       </div>
     );

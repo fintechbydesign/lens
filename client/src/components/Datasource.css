@@ -1,0 +1,14 @@
+.Datasource_container {
+    align-items: center;
+    border: lightgray 4px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.Datasource_selected {
+    border: red 4px solid;
+}
+
+.Datasource_image {
+    margin-right: 15px;
+}

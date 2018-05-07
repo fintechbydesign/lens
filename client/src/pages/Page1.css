@@ -1,0 +1,20 @@
+.Page1_container {
+    justify-content: space-evenly;
+}
+
+.Page1_speechBubble {
+    margin-right: 100px;
+    align-self: center;
+}
+
+.Page1_speechBubble:after {
+    content: "";
+    position: relative;
+    display: block; /* reduce the damage in FF3.0 */
+    bottom: -46px;
+    left: 100px;
+    width: 0;
+    border-width: 30px 30px 0;
+    border-style: solid;
+    border-color: lightgray transparent;
+}

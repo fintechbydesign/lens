@@ -14,12 +14,14 @@ function Button (props) {
 
   // visual
   const fill = props.on ? props.colour : 'white';
+  const stroke = props.enable ? 'black' : 'gray';
+  const text = props.enable ? (<text x='25' y='30'>{props.text}</text>) : null;
 
   //render
   return (
     <svg width='50' height='50' className={props.className} onClick={selected}>
-      <circle cx='25' cy='25' r='20' stroke='black' strokeWidth='3' fill={fill}/>
-      <text x='25' y='30'>{props.text}</text>
+      <circle cx='25' cy='25' r='20' stroke={stroke} strokeWidth='3' fill={fill} />
+      {text}
     </svg>
   );
 }
