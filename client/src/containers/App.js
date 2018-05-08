@@ -68,7 +68,7 @@ class App extends Component {
       ...this.state,
       currentPage: nextPage,
       buttons: {
-        ... this.state.buttons,
+        ...this.state.buttons,
         enable: [...pageStates[nextPage].buttonEnablement]
       }
     });
