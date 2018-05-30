@@ -16,6 +16,7 @@ import {
   methods,
   pageStates,
   slowScrollOptions } from './AppConstants';
+import {saveJourney} from "../data/stats";
 
 class App extends Component {
 
@@ -54,16 +55,26 @@ class App extends Component {
 
   reset () {
     console.log('reset');
+    const { journey } = this.state;
+    if (Object.keys(journey).length > 0) {
+      saveJourney(journey);
+    }
     scroller.scrollTo('page0', fastScrollOptions);
     this.setState({
       ...initialState,
+      journey: {},
       showButtons: this.state.showButtons
     });
   }
 
   nextPage () {
-    const nextPage = this.state.currentPage === 3 ? 0 : this.state.currentPage + 1;
-    scroller.scrollTo(`page${nextPage}`, slowScrollOptions);
+    const { currentPage, journey } = this.state;
+    const nextPage = currentPage === 3 ? 0 : currentPage + 1;
+    const nextPageName = `page${nextPage}`;
+    journey[nextPageName] = {
+      start: Date.now()
+    };
+    scroller.scrollTo(nextPageName, slowScrollOptions);
     this.setState({
       ...this.state,
       currentPage: nextPage,
