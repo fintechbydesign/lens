@@ -1,0 +1,10 @@
+.Poll_container {
+    align-items: center;
+    border: lightgray 4px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.Poll_selected {
+    border: red 4px solid;
+}
