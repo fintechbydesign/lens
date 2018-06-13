@@ -1,5 +1,6 @@
 import React from 'react';
 import Poll from '../components/Poll';
+import './Page4.css';
 
 const pollProperties = [
   {
@@ -29,7 +30,7 @@ function Page4 (props) {
     return (<Poll {...mergedProps} />)
   });
   return (
-    <div name ='page4' className='flexFixedSize flexContainerColumn'>
+    <div name ='page4' className='flexFixedSize flexContainerColumn fullPage'>
       {poll}
     </div>
   );

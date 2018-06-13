@@ -72,9 +72,16 @@ class App extends Component {
     const { currentPage, journey } = this.state;
     const nextPage = currentPage === TOTAL_PAGES ? 0 : currentPage + 1;
     const nextPageName = `page${nextPage}`;
-    // If the journey is at the Poll page, the option
+    // If the saveButtons pageState is set, the button layout is saved into the journey
+    // This is useful for the Poll, but will probably also come in handy when saving the choices
+    // TODO: Is this distinction even important? Things to consider are
+    // 1. Adds extra logic here
+    // 2. pageStates[currentPage].saveButtons will always be this.state.buttons.length == 0
+    // 3. But we might not have access to pageStates[currentPage].saveButtons
+    // 4. When saving the JSON we don't want a ton of empty arrays
     journey[nextPageName] = {
-      start: Date.now()
+      start: Date.now(),
+      buttons: pageStates[currentPage].saveButtons ? this.state.buttons.on : []
     };
     scroller.scrollTo(nextPageName, slowScrollOptions);
     this.setState({

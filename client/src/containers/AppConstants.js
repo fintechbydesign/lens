@@ -42,32 +42,38 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 0,
-    instruction: 'Press the button to continue'
+    instruction: 'Press the button to continue',
+    saveButtons: false,
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 1,
-    instruction: 'Press the button to continue'
+    instruction: 'Press the button to continue',
+    saveButtons: false,
   }),
   Object.freeze({
     buttonEnablement: defaultButtonTrueArray,
     index: 2,
-    instruction: 'Submit to Employer...'
+    instruction: 'Submit to Employer...',
+    saveButtons: false,
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 3,
-    instruction: 'Press the button to continue'
+    instruction: 'Press the button to continue',
+    saveButtons: false,
   }),
   Object.freeze({
     buttonEnablement: defaultButtonTrueArray,
     index: 4,
-    instruction: 'Submit your Poll'
+    instruction: 'Submit your Poll',
+    saveButtons: true,
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 5,
-    instruction: 'Press the button to continue'
+    instruction: 'Press the button to continue',
+    saveButtons: false,
   })
 ]);
 
