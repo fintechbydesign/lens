@@ -58,6 +58,16 @@ const pageStates = Object.freeze([
     buttonEnablement: defaultButtonFalseArray,
     index: 3,
     instruction: 'Press the button to continue'
+  }),
+  Object.freeze({
+    buttonEnablement: defaultButtonTrueArray,
+    index: 4,
+    instruction: 'Submit your Poll'
+  }),
+  Object.freeze({
+    buttonEnablement: defaultButtonFalseArray,
+    index: 5,
+    instruction: 'Press the button to continue'
   })
 ]);
 

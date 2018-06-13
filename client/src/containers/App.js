@@ -18,6 +18,7 @@ import {
   slowScrollOptions } from './AppConstants';
 import {saveJourney} from "../data/stats";
 
+const TOTAL_PAGES = 5;
 class App extends Component {
 
   constructor (props) {
@@ -69,8 +70,9 @@ class App extends Component {
 
   nextPage () {
     const { currentPage, journey } = this.state;
-    const nextPage = currentPage === 3 ? 0 : currentPage + 1;
+    const nextPage = currentPage === TOTAL_PAGES ? 0 : currentPage + 1;
     const nextPageName = `page${nextPage}`;
+    // If the journey is at the Poll page, the option
     journey[nextPageName] = {
       start: Date.now()
     };
