@@ -35,7 +35,8 @@ const initialState = Object.freeze({
     enable: defaultButtonFalseArray,
     on: defaultButtonFalseArray
   }),
-  journey: {}
+  journey: {},
+  data :[]
 });
 
 const pageStates = Object.freeze([

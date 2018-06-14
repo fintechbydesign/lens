@@ -16,7 +16,7 @@ import {
   methods,
   pageStates,
   slowScrollOptions } from './AppConstants';
-import {saveJourney} from "../data/stats";
+import {saveJourney, getStatsFromJourneys} from "../data/stats";
 
 const TOTAL_PAGES = 5;
 class App extends Component {
@@ -103,7 +103,8 @@ class App extends Component {
           ...this.state.buttons,
           on: initialState.buttons.on,
           enable: [...pageStates[nextPage].buttonEnablement]
-        }
+        },
+        data: getStatsFromJourneys(),
       });
     }
 
@@ -152,7 +153,7 @@ class App extends Component {
       <div className='container flexContainerRow'>
         {this.renderButtons()}
         <div className='flexDynamicSize container flexContainerColumn'>
-          <Pages buttons={this.state.buttons} />
+          <Pages buttons={this.state.buttons} data={this.state.data}/>
           {this.renderInstruction()}
           {this.renderSubmit()}
         </div>

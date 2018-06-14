@@ -4,11 +4,6 @@ import BarChart from '../components/BarChart'
 
 const chartProperties = {
   title: "Chosen Options",
-  data: [{Letter: "A" ,Frequency: .08167},
-         {Letter: "B" ,Frequency: .01492},
-         {Letter: "C" ,Frequency: .02782},
-         {Letter: "D" ,Frequency: .04253},
-         {Letter: "E" ,Frequency: .12702}],
   width: 900,
   height: 450,
   barWidth : 25,
@@ -28,7 +23,7 @@ function Page5 (props) {
       <BarChart
           fill={chartProperties.fill}
           title= {chartProperties.title}
-          data= {chartProperties.data}
+          data= {props.data}
           width= {chartProperties.width}
           margin = {chartProperties.margin}
           height= {chartProperties.height}

@@ -6,7 +6,24 @@ const KEY = 'STATS';
 const getPastJourneys = () => {
   const journeys = get(KEY);
   return (journeys) ? journeys : [];
-}
+};
+
+const getStatsFromJourneys = () => {
+  const journeys = getPastJourneys();
+  let stats = [{Letter: "A" ,Frequency: 0},
+    {Letter: "B" ,Frequency: 0},
+    {Letter: "C" ,Frequency: 0},
+    {Letter: "D" ,Frequency: 0},];
+  journeys.map((val) => {
+    if(val['page5']){
+      stats[0].Frequency += val['page5'].buttons[1] ? 1 : 0;
+      stats[1].Frequency += val['page5'].buttons[2] ? 1 : 0;
+      stats[2].Frequency += val['page5'].buttons[3] ? 1 : 0;
+      stats[3].Frequency += val['page5'].buttons[4] ? 1 : 0;
+    }
+  });
+  return stats;
+};
 
 const saveJourney = async(journey) => {
   try {
@@ -18,8 +35,9 @@ const saveJourney = async(journey) => {
   } catch (err) {
     console.log(err);
   }
-}
+};
 
 export {
-  saveJourney
+  saveJourney,
+  getStatsFromJourneys
 }

@@ -11,7 +11,6 @@ import './Pages.css';
  Page selection
  */
 class Pages extends Component {
-
   render() {
     return (
         <div id='pages' className='flexDynamicSize flexContainerColumn Pages'>
@@ -20,7 +19,7 @@ class Pages extends Component {
           <Page2 buttons={this.props.buttons} />
           <Page3 />
           <Page4 buttons={this.props.buttons} />
-          <Page5 />
+          <Page5 data={this.props.data}/>
         </div>
     );
   }
