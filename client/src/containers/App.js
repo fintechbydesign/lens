@@ -53,11 +53,14 @@ class App extends Component {
       });
     }
   }
-
-  reset () {
+  // Resets the interaction, shouldNotSave is a boolean that determines if the journey should not be saved on
+  // reset. This stops the journey being saved twice: Once before the Visualisation shows, once when the site loops
+  // IMPORTANT: This boolean is a double negative, as it makes it much easier to use the method on the button, as
+  // !undefined evaluates to true
+  reset (shouldNotSave) {
     console.log('reset');
     const { journey } = this.state;
-    if (Object.keys(journey).length > 0) {
+    if (!shouldNotSave && Object.keys(journey).length > 0) {
       saveJourney(journey);
     }
     scroller.scrollTo('page0', fastScrollOptions);
@@ -84,14 +87,27 @@ class App extends Component {
       buttons: pageStates[currentPage].saveButtons ? this.state.buttons.on : []
     };
     scroller.scrollTo(nextPageName, slowScrollOptions);
-    this.setState({
-      ...this.state,
-      currentPage: nextPage,
-      buttons: {
-        ...this.state.buttons,
-        enable: [...pageStates[nextPage].buttonEnablement]
-      }
-    });
+
+    //Save Interaction when it reaches the Data Visualisation
+    if (nextPage === TOTAL_PAGES){
+      saveJourney(journey) // Save the journey, so the data for the current journey is considered in the Data Vis
+    }
+    //Reset Interaction when it "loops"
+    if (nextPage === 0){
+      this.reset(true) // Reset but don't save the journey
+    }else {
+      this.setState({
+        ...this.state,
+        currentPage: nextPage,
+        buttons: {
+          ...this.state.buttons,
+          on: initialState.buttons.on,
+          enable: [...pageStates[nextPage].buttonEnablement]
+        }
+      });
+    }
+
+
   }
 
   toggleButtons () {
