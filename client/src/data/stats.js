@@ -15,11 +15,11 @@ const getStatsFromJourneys = () => {
     {Letter: "C" ,Frequency: 0},
     {Letter: "D" ,Frequency: 0},];
   journeys.map((val) => {
-    if(val['page5']){
-      stats[0].Frequency += val['page5'].buttons[1] ? 1 : 0;
-      stats[1].Frequency += val['page5'].buttons[2] ? 1 : 0;
-      stats[2].Frequency += val['page5'].buttons[3] ? 1 : 0;
-      stats[3].Frequency += val['page5'].buttons[4] ? 1 : 0;
+    if(val['page11']){
+      stats[0].Frequency += val['page11'].buttons[1] ? 1 : 0;
+      stats[1].Frequency += val['page11'].buttons[2] ? 1 : 0;
+      stats[2].Frequency += val['page11'].buttons[3] ? 1 : 0;
+      stats[3].Frequency += val['page11'].buttons[4] ? 1 : 0;
     }
   });
   return stats;
