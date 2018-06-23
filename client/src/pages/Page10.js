@@ -1,7 +1,7 @@
 import React from 'react';
-import './Page4.css';
+import './Page10.css';
 
-function Page4 (props) {
+function Page10 (props) {
     return (
         <div name ='page4' className='flexFixedSize flexContainerRow fullPage' id="page3">
             <h1>
@@ -11,4 +11,4 @@ function Page4 (props) {
     );
 }
 
-export default Page4;
+export default Page10;

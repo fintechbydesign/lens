@@ -1,9 +1,9 @@
 import React from 'react';
-import './Page4.css';
+import './Page7.css';
 
 function Page4 (props) {
     return (
-        <div name ='page4' className='flexFixedSize flexContainerRow fullPage' id="page3">
+        <div name ='page7' className='flexFixedSize flexContainerRow fullPage' id="page3">
             <h1>
                 What next?
             </h1>
@@ -11,4 +11,4 @@ function Page4 (props) {
     );
 }
 
-export default Page4;
+export default Page7;
