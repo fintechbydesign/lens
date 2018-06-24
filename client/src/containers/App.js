@@ -18,7 +18,7 @@ import {
   slowScrollOptions } from './AppConstants';
 import {saveJourney, getStatsFromJourneys} from "../data/stats";
 
-const TOTAL_PAGES = 5;
+const TOTAL_PAGES = 12;
 class App extends Component {
 
   constructor (props) {

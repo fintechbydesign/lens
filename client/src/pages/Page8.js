@@ -3,7 +3,7 @@ import './Page8.css';
 
 function Page8 (props) {
     return (
-        <div name ='page4' className='flexFixedSize flexContainerRow fullPage' id="page3">
+        <div name ='page8' className='flexFixedSize flexContainerRow fullPage' id="page8">
             <h1>
                 What next?
             </h1>

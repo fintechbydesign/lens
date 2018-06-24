@@ -33,11 +33,9 @@ class Pages extends Component {
           <Page8 />
           <Page9 />
           <Page10 />
-          <Page11 />
-          <Page12 />
-          <Page13 />
           <Page11 buttons={this.props.buttons} />
           <Page12 data={this.props.data}/>
+          <Page13 />
         </div>
     );
   }
