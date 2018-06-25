@@ -89,7 +89,7 @@ class App extends Component {
     scroller.scrollTo(nextPageName, slowScrollOptions);
 
     //Save Interaction when it reaches the Data Visualisation
-    if (nextPage === TOTAL_PAGES){
+    if (nextPage === TOTAL_PAGES - 1){
       saveJourney(journey) // Save the journey, so the data for the current journey is considered in the Data Vis
     }
     //Reset Interaction when it "loops"
