@@ -23,11 +23,11 @@ class Pages extends Component {
         <div id='pages' className='flexDynamicSize flexContainerColumn Pages'>
           <Page0 />
           <Page1 />
-          <Page2 buttons={this.props.buttons} />
+          <Page2 />
           <Page3 />
           <Page4 />
           <Page5 />
-          <Page6 />
+          <Page6 buttons={this.props.buttons}/>
           <Page7 />
           <Page8 />
           <Page9 />
