@@ -1,0 +1,15 @@
+:root{
+    --background-blue : "#0d183f";
+    --persona-green: "#aed477";
+    --choice-light-blue: "#899fd1"
+}
+/* I know this is called colors and not fonts... */
+@font-face {
+    font-family: "Bank Printer";
+    src: url("fonts/F25_Bank_Printer.otf");
+}
+@font-face {
+    font-family: "Bank Printer";
+    src: url("fonts/F25_Bank_Printer_Bold.otf");
+    font-weight: bold;
+}
