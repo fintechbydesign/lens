@@ -3,11 +3,11 @@ import './Page12.css';
 
 function Page12 (props) {
     return (
-        <dviv name ='page12' className='flexFixedSize flexContainerRow fullPage' id="page3">
+        <div name ='page12' className='flexFixedSize flexContainerRow fullPage' id="page12">
             <h1>
                 What next?
             </h1>
-        </dviv>
+        </div>
     );
 }
 

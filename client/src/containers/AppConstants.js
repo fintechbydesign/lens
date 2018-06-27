@@ -65,8 +65,8 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonTrueArray,
     index: 3,
-    instruction: 'Submit your choices',
-    saveButtons: false,
+    instruction: 'Click next to find a job',
+    saveButtons: true,
     pageName: "Persona Choosing"
   }),
   Object.freeze({
