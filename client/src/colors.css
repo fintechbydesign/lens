@@ -1,7 +1,7 @@
 :root{
-    --background-blue : "#0d183f";
-    --persona-green: "#aed477";
-    --choice-light-blue: "#899fd1"
+    --background-blue : #0d183f;
+    --persona-green: #aed477;
+    --choice-light-blue: #899fd1;
 }
 /* I know this is called colors and not fonts... */
 @font-face {
