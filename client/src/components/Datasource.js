@@ -2,8 +2,6 @@ import React from 'react';
 import './Datasource.css'
 
 function Datasource (props) {
-  const actionDescription = `You: ${props.actionDescription}`;
-  const actionShows = `This shows: ${props.actionShows}`;
   const classes = props.selected ?
     'flexContainerRow Datasource_container Datasource_selected' :
     'flexContainerRow Datasource_container';
@@ -12,13 +10,16 @@ function Datasource (props) {
     null;
   return (
     <div className={classes}>
-      <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='Datasource_image' />
       <div className='flexDynamicSize'>
-        <div>
-          {actionDescription}
+        <div className="source_name">
+            {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='Datasource_image' />
         </div>
-        <div>
-          {actionShows}
+        <div className="source_options">
+            <ul>
+                <li>{props.options['1']}</li>
+                <li>{props.options['2']}</li>
+                <li>{props.options['3']}</li>
+            </ul>
         </div>
       </div>
       {selected}

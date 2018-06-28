@@ -3,50 +3,59 @@ import Datasource from '../components/Datasource';
 
 const datasourceProperties = [
   {
-    actionDescription: 'Do 10,000 steps per day',
-    actionShows: 'You\'re active and healthy',
-    iconSrc: '/logos/fitbit.png',
+    actionDescription: 'Facebook',
+    options: {
+      1: "likes",
+      2: "comments",
+      3: "posts",
+    },
+    iconSrc: '/logos/facebook.svg',
   },
   {
-    actionDescription: 'Visit a lot of points of interest',
-    actionShows: 'You\'re familiar with the area',
-    iconSrc: '/logos/fitbit.png',
+    actionDescription: 'YouTube',
+    options: {
+      1: "watch list",
+      2: "subscription",
+      3: "comments",
+    },
+    iconSrc: '/logos/youtube.svg',
   },
   {
-    actionDescription: 'Get 8 hours sleep a night',
-    actionShows: 'You\'re well rested and have energy',
-    iconSrc: '/logos/fitbit.png',
+    actionDescription: 'Fitbit',
+    options: {
+      1: "heart rate",
+      2: "steps",
+      3: "sleep",
+    },
+    iconSrc: '/logos/fitbit.svg',
   },
   {
-    actionDescription: 'Liked 20 videos and disliked 53 videos',
-    actionShows: 'You\'re more likely to share negative views',
-    iconSrc: '/logos/youtube.png',
+    actionDescription: 'Instagram',
+      options: {
+          1: "following",
+          2: "posts",
+          3: "hashtags",
+      },
+      iconSrc: '/logos/instagram.svg',
   },
   {
-    actionDescription: 'Subscribe to Music, News and Food channels',
-    actionShows: 'You have a broad range of interests',
-    iconSrc: '/logos/youtube.png',
+    actionDescription: 'Amazon',
+      options: {
+          1: "purchases",
+          2: "reviews",
+          3: "delivery history",
+      },
+      iconSrc: '/logos/amazon.svg',
   },
   {
-    actionDescription: 'Comment on 3 of every 10 videos you watch',
-    actionShows: 'Your\'re comfortable sharing your opinion',
-    iconSrc: '/logos/youtube.png',
+    actionDescription: 'Uber',
+      options: {
+          1: "location",
+          2: "your rating",
+          3: "tips",
+      },
+      iconSrc: '/logos/fitbit.svg',
   },
-  {
-    actionDescription: 'Started books on History, Art and Bibliographies',
-    actionShows: 'You have a broad range of interests',
-    iconSrc: '/logos/amazon.png',
-  },
-  {
-    actionDescription: 'Only buy items on your saved list at the end of the month',
-    actionShows: 'You\'re not an impulsive spender',
-    iconSrc: '/logos/amazon.png',
-  },
-  {
-    actionDescription: 'Give feedback often about your purchases',
-    actionShows: 'You\'re interested in the benefit of others',
-    iconSrc: '/logos/amazon.png',
-  }
 ];
 
 function Page6 (props) {
