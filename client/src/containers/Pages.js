@@ -21,19 +21,19 @@ class Pages extends Component {
   render() {
     return (
         <div id='pages' className='flexDynamicSize flexContainerColumn Pages'>
-          <Page0 />
-          <Page1 />
-          <Page2 />
-          <Page3 buttons={this.props.buttons}/>
-          <Page4 />
-          <Page5 />
-          <Page6 buttons={this.props.buttons}/>
-          <Page7 />
-          <Page8 />
-          <Page9 />
-          <Page10 buttons={this.props.buttons}/>
-          <Page11 data={this.props.data} />
-          <Page12 />
+          <Page0 /> {/* Home */}
+          <Page1 /> {/* Intro */}
+          <Page2 buttons={this.props.buttons}/> {/* Persona Choosing */}
+          <Page3 /> {/* Persona Loading Screen */}
+          <Page4 /> {/* Job Found TODO: This screen needs props for name,job,salary and hours or just the name and the rest can be loaded dynamically*/}
+          <Page5  buttons={this.props.buttons}/> {/* Data source choosing */}
+          <Page6 /> {/* Data source loading */}
+          <Page7 /> {/* Results Screen */}
+          <Page8 /> {/* Detailed Results Screen */}
+          <Page9 /> {/* Poll Intro */}
+          <Page10 buttons={this.props.buttons}/> {/* Poll */}
+          <Page11 data={this.props.data} /> {/* Data Viz */}
+          <Page12 /> {/* Goodbye */}
         </div>
     );
   }

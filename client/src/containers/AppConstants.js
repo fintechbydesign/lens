@@ -20,6 +20,9 @@ const slowScrollOptions = Object.freeze({
   smooth: 'easeInOutCubic'
 });
 
+// The default instruction is "Click Next"
+const defaultInstruction = "Click Next";
+
 const defaultButtonFalseArray = Object.freeze([
   'dummy', false, false, false, false, false, false, false, false, false
 ]);
@@ -27,6 +30,11 @@ const defaultButtonFalseArray = Object.freeze([
 const defaultButtonTrueArray = Object.freeze([
   'dummy', true, true, true, true, true, true, true, true, true
 ]);
+
+const pollButtonTrueArray = Object.freeze([
+    'dummy', true, true, true, true, false, false, false, false, false
+]);
+
 
 const initialState = Object.freeze({
   currentPage: 0,
@@ -40,95 +48,99 @@ const initialState = Object.freeze({
 });
 
 // Page names are just for readability here
+// Important distinction here is that these are zero indexed, but the pdf of screens are 1 index!
+
 const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 0,
-    instruction: 'Press the button to continue',
+    instruction: defaultInstruction,
     saveButtons: false,
     pageName: "Home"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 1,
-    instruction: 'Press the button to continue',
+    instruction: defaultInstruction,
     saveButtons: false,
     pageName: "Intro"
   }),
   Object.freeze({
-    buttonEnablement: defaultButtonFalseArray,
-    index: 2,
-    instruction: 'Press the button to continue',
-    saveButtons: false,
-    pageName: "Persona Intro"
-  }),
-  Object.freeze({
     buttonEnablement: defaultButtonTrueArray,
-    index: 3,
+    index: 2,
     instruction: 'Click next to find a job',
     saveButtons: true,
     pageName: "Persona Choosing"
   }),
   Object.freeze({
-    buttonEnablement: defaultButtonTrueArray,
-    index: 4,
-    instruction: 'Press the button to continue',
+    buttonEnablement: defaultButtonFalseArray,
+    index: 3,
+    instruction: '',
     saveButtons: false,
-    pageName: "Job Description"
+    loadingScreen: true,
+    pageName: "Persona Loading screen"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
-    index: 5,
-    instruction: 'Press the button to continue',
+    index: 4,
+    instruction: 'Click next to apply',
     saveButtons: false,
-    pageName: "Data sharing intro"
+    pageName: "Job Found"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonTrueArray,
-    index: 6,
-    instruction: 'Submit your what you want to share',
+    index: 5,
+    instruction: 'Submit your application',
     saveButtons: true,
     pageName: "Data sources choosing"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
-    index: 7,
+    index: 6,
     instruction: '',
     saveButtons: false,
-    pageName: "Fake thinking screen"
+    loadingScreen: true,
+    pageName: "Data source loading"
+  }),
+  Object.freeze({
+    buttonEnablement: defaultButtonFalseArray,
+    index: 7,
+    instruction: defaultInstruction,
+    saveButtons: false,
+    pageName: "Results Screen"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 8,
-    instruction: 'Press the button to continue',
+    instruction: defaultInstruction,
     saveButtons: false,
-    pageName: "Simple Decision screen"
+    pageName: "Detailed results screen"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 9,
-    instruction: 'Press the button to continue',
+    instruction: "Submit your application",
     saveButtons: false,
-    pageName: "Detailed decision screen"
+    pageName: "Poll Intro"
   }),
   Object.freeze({
-    buttonEnablement: defaultButtonTrueArray,
+    buttonEnablement: pollButtonTrueArray,
     index: 10,
-    instruction: 'Submit your choices',
+    instruction: 'Click next to see what other humans said',
     saveButtons: true,
     pageName:"Poll"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 11,
-    instruction: 'Press the button to continue',
+    instruction: defaultInstruction,
     saveButtons: false,
     pageName: "Data Visualisation"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 12,
-    instruction: 'Press the button to restart',
+    instruction: 'Start Over',
     saveButtons: false,
     pageName: "Goodbye"
   }),

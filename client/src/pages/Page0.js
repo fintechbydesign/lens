@@ -1,6 +1,8 @@
 import React from 'react';
 import './Page0.css';
 
+
+//Home
 function Page0 (props) {
   return (
     <div name ='page0' className='fullPage flexFixedSize flexContainerColumn'>
