@@ -1,6 +1,7 @@
 import React from 'react';
 import './Page2.css';
 import Persona from "../components/Persona";
+import SpeechBubble from "../components/Speechbubble";
 
 // Persona choosing
 
@@ -59,6 +60,15 @@ function Page2 (props) {
     });
     return (
         <div name ='page2' className='fullPage flexFixedSize flexContainerColumn' id="page2">
+            <SpeechBubble
+                top={true}
+                text={[
+                    "Now let’s get to the fun bit.",
+                    "Put yourself in someone else’s shoes and see if you can",
+                    "get them a new job.",
+                    "Pick a persona below by using the buttons on the left."
+                ]}
+            />
             {personas}
         </div>
     );
