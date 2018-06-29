@@ -6,10 +6,10 @@ import "./Speechbubble.css"
 // 2. an boolean if its the top (true) or center speechbubble (false)
 
 function SpeechBubble(props) {
-    return <div className="">
+    return <div className={props.top? "top" : "center"}>
         <img className={props.top? "logo_top" : "logo_center"} src="logos/logo.png" alt='lens icon'/>
-        <img className={props.top? "top" : "center"} src={props.top ? "/boxes/topchatbox.svg" : "/boxes/centerchatbox.svg"}/>
-        <div className="text">
+        <img className={props.top? "box_top" : "box_center"} src={props.top ? "/boxes/topchatbox.svg" : "/boxes/centerchatbox.svg"}/>
+        <div className={props.top? "text_top text" : "text_center text"}>
             {props.text.map(text => <p>{text}</p>)}
         </div>
     </div>

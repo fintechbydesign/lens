@@ -1,11 +1,11 @@
 .speechBubble_text {
 
 }
-.center{
+.box_center{
     width: 643.33px;
     height: 146.25px;
 }
-.top{
+.box_top{
     width: 835.37px;
     height: 147.25px;
 }
@@ -17,4 +17,23 @@
 .logo_center{
     width: 355px;
     height: 352px;
+}
+.text_top{
+    position: relative;
+    top: -133px;
+    right: -133px;
+    line-height: 3pt;
+}
+.text_center{
+    position: relative;
+    top: -133px;
+    right: -418px;
+    line-height: 3pt;
+}
+
+.top{
+    margin-top: 15px;
+}
+.center{
+    margin: auto;
 }

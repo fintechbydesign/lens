@@ -8,8 +8,9 @@ function Page0 (props) {
     <div name ='page0' className='fullPage flexFixedSize flexContainerColumn'>
         <SpeechBubble top={false} text={[
             "Hello Human!",
-            "Do you know what personal data makes up your digital identity? Want to use personal data to find a job?",
-            "Click next"
+            "Do you know what personal data makes",
+            "up your digital identity? Want to use",
+            "personal data to find a job? Click next.",
         ]}/>
     </div>
   );

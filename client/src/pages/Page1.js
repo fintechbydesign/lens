@@ -7,7 +7,7 @@ function Page1 (props) {
   return (
     <div name ='page1' className='fullPage flexFixedSize flexContainerRow Page1_container'>
       <div className=''>
-          <SpeechBubble top={false} text={[
+          <SpeechBubble top={true} text={[
               "Did you know...",
           ]}/>
       </div>
