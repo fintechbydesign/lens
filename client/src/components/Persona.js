@@ -9,7 +9,7 @@ function Persona (props) {
         'flexContainerRow persona_container';
     return (
         <div className={classes}>
-            <div className={props.selected ? "button_selected" : "button"}><p>&#60;</p></div>
+            <div className={props.selected ? "persona_button_selected" : "persona_button"}><p>&#60;</p></div>
             <img src={props.avatarSrc}  alt='persona icon' className='persona_image' />
             <div className='flexDynamicSize persona_text'>
                 <div className="heading">

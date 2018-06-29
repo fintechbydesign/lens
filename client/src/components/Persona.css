@@ -21,3 +21,34 @@
 .persona_text p{
     margin-bottom: 15pt;
 }
+.persona_button{
+    background-color: var(--persona-green);
+    border-radius: 8px;
+    width: 100px;
+    height: 54px;
+    text-align: right;
+    top: -85px;
+    position: relative;
+    font-size: 30pt;
+
+}
+.persona_button p{
+    position: relative;
+    top: -28px;
+    right: 5px;
+}
+
+.persona_button_selected{
+    background-color: var(--persona-green);
+    border-radius: 3px 10px 10px 3px;
+    width: 100px;
+    height: 230px;
+    text-align: right;
+    font-size: 30pt;
+    filter: opacity(0.7);
+}
+.persona_button_selected p{
+    position: relative;
+    top: -25px;
+    right: 5px;
+}
