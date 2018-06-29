@@ -78,13 +78,13 @@ function Page8 (props) {
         return (<Result {...mergedProps} />)
     });
     return (
-        <div name ='page8' className='flexFixedSize flexContainerRow fullPage' id="page8">
-            <SpeechBubble top={false} text={[
+        <div name ='page8' className='flexFixedSize flexContainerColumn fullPage' id="page8">
+            <SpeechBubble top={true} text={[
                 "Even though you thought you shared the right data, it",
                 "wasn't enough to get the job.",
                 "Below is the good and bad."
             ]}/>
-
+            {results}
         </div>
     );
 }

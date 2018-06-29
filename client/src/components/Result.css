@@ -3,6 +3,7 @@
     border: lightgray 4px solid;
     margin: 5px;
     padding: 5px;
+    height: 230px;
 }
 
 .result_selected {
@@ -16,5 +17,8 @@
 
 }
 .result_inactive{
-    filter: alpha(20);
+    filter: opacity(0.1);
+}
+.results_options li{
+    margin-bottom: 15pt;
 }

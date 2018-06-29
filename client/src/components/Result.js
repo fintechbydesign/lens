@@ -3,12 +3,14 @@
 import React from 'react';
 import './Result.css'
 
+// This "if" is gonna be refactored when I load in the content dynamically from the actual results TODO
+
 function Result (props) {
     if(props.active){
         return (
             <div className="flexContainerRow result_container result_active">
                 <div className='flexDynamicSize'>
-                    <div className="results_name">
+                    <div className="heading">
                         {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='result_image' />
                     </div>
                     <div className="results_options">
@@ -23,9 +25,9 @@ function Result (props) {
     }
     else{
         return (
-            <div className="flexContainerRow result_container result_active">
+            <div className="flexContainerRow result_container result_inactive">
                 <div className='flexDynamicSize'>
-                    <div className="results_name">
+                    <div className="heading">
                         {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='result_image' />
                     </div>
                     <div className="results_options">

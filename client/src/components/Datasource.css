@@ -3,6 +3,7 @@
     border: lightgray 4px solid;
     margin: 5px;
     padding: 5px;
+    height: 230px;
 }
 
 .Datasource_selected {
@@ -11,4 +12,7 @@
 
 .Datasource_image {
     margin-right: 15px;
+}
+.source_options li{
+    margin-bottom: 15pt;
 }
