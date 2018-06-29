@@ -3,6 +3,7 @@
     border: lightgray 4px solid;
     margin: 5px;
     padding: 5px;
+    height: 230px;
 }
 
 .persona_selected {
@@ -10,5 +11,11 @@
 }
 
 .persona_image {
-    margin-right: 15px;
+    margin-right: 50px;
+    margin-left: 15px;
+    height: 230px;
+    width: 150px;
+}
+.persona_text p{
+    margin-bottom: 15pt;
 }

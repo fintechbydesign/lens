@@ -1,5 +1,5 @@
 import React from 'react';
-import './Datasource.css'
+import './Persona.css'
 
 // This is quite similar to the general Datasource component, but has different props and styling
 
@@ -12,20 +12,20 @@ function Persona (props) {
         null;
     return (
         <div className={classes}>
-            <img src={props.avatarSrc} width='100' height='40' alt='datasource icon' className='persona_image' />
-            <div className='flexDynamicSize'>
+            <img src={props.avatarSrc}  alt='datasource icon' className='persona_image' />
+            <div className='flexDynamicSize persona_text'>
                 <div className="heading">
                     {props.nameAge}
                 </div>
-                <div className="text">
+                <p className="text">
                     {props.location}
-                </div>
-                <div className="text">
+                </p>
+                <p className="text">
                     {props.currentJob}
-                </div>
-                <div className="text">
+                </p>
+                <p className="text">
                     {props.description}
-                </div>
+                </p>
             </div>
             {selected}
         </div>

@@ -12,3 +12,9 @@
 .result_image {
     margin-right: 15px;
 }
+.result_active{
+
+}
+.result_inactive{
+    filter: alpha(20);
+}

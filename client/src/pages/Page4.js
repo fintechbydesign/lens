@@ -1,5 +1,6 @@
 import React from 'react';
 import './Page4.css';
+import SpeechBubble from "../components/Speechbubble";
 
 // Job found
 
@@ -13,14 +14,12 @@ Page4.defaultProps = {
 function Page4 (props) {
     return (
         <div name ='page4' className='flexFixedSize flexContainerRow fullPage' id="page4">
-            <div className='speechBubble Page1_speechBubble'>
-                <p>
-                    I've found the perfect job for {props.name}!<br/>
-                    {props.job}<br/>
-                    {props.salary} salary<br/>
-                    {props.hours} hours/week
-                </p>
-            </div>
+            <SpeechBubble top={false} text={[
+                `I've found the perfect job for ${props.name}!`,
+                props.job,
+                `${props.salary} salary`,
+                `${props.hours} hours/week`
+            ]}/>
         </div>
     );
 }
