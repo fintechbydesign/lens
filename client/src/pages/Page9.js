@@ -1,12 +1,15 @@
 import React from 'react';
 import './Page4.css';
+import SpeechBubble from "../components/Speechbubble";
 
 function Page9 (props) {
     return (
         <div name ='page9' className='flexFixedSize flexContainerRow fullPage' id="page9">
-            <h1>
-                What next?
-            </h1>
+            <SpeechBubble top={false} text={
+                ["After all that hard work, have you",
+                 "ever thought about sharing your own",
+                 "personal data?"]
+            }/>
         </div>
     );
 }
