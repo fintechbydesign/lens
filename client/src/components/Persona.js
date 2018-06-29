@@ -7,12 +7,10 @@ function Persona (props) {
     const classes = props.selected ?
         'flexContainerRow persona_container persona_selected' :
         'flexContainerRow persona_container';
-    const selected = props.selected ?
-        (<img src='/Check_mark.svg' alt='persona selected' width='75' height='30'/>) :
-        null;
     return (
         <div className={classes}>
-            <img src={props.avatarSrc}  alt='datasource icon' className='persona_image' />
+            <div className={props.selected ? "button_selected" : "button"}><p>&#60;</p></div>
+            <img src={props.avatarSrc}  alt='persona icon' className='persona_image' />
             <div className='flexDynamicSize persona_text'>
                 <div className="heading">
                     {props.nameAge}
@@ -27,7 +25,6 @@ function Persona (props) {
                     {props.description}
                 </p>
             </div>
-            {selected}
         </div>
     );
 }

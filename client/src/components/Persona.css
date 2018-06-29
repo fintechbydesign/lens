@@ -1,19 +1,21 @@
 .persona_container {
     align-items: center;
-    border: lightgray 4px solid;
-    margin: 5px;
+    border: var(--border-blue) 1px solid;
+    border-radius: 10px;
+    margin-bottom: 40px;
     padding: 5px;
     height: 230px;
 }
 
 .persona_selected {
-    border: red 4px solid;
+    border: var(--persona-green) 1px solid;
+    box-shadow: 2px 2px 17px var(--persona-green);
 }
 
 .persona_image {
     margin-right: 50px;
-    margin-left: 15px;
-    height: 230px;
+    margin-left: 20px;
+    height: 220px;
     width: 150px;
 }
 .persona_text p{
