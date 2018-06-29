@@ -2,8 +2,6 @@ import React from 'react';
 import './Poll.css'
 
 function Poll (props) {
-  const actionDescription = `I agree with: ${props.pollDescription}`;
-  const actionShows = `This shows: ${props.pollShows}`;
   const classes = props.selected ?
       'flexContainerRow Poll_container Poll_selected' :
       'flexContainerRow Poll_container';
@@ -13,11 +11,11 @@ function Poll (props) {
   return (
       <div className={classes}>
         <div className='flexDynamicSize'>
-          <div>
-            {actionDescription}
+          <div className="heading poll_choice">
+            {props.pollChoice}
           </div>
-          <div>
-            {actionShows}
+          <div className="text poll_description">
+            {props.pollDescription.map(text => <p>{text}</p>)}
           </div>
         </div>
         {selected}

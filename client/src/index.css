@@ -53,10 +53,13 @@ svg text {
   height: 96vh;
 }
 .heading{
-  font-size: 50pt;
+  font-size: 37.5pt;
   color: var(--persona-green);
 }
 .text{
   font-size: 15pt;
   color: white;
+}
+.last{
+  margin-bottom: 0;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Page11.css';
 import BarChart from '../components/BarChart'
+import SpeechBubble from "../components/Speechbubble";
 
 const chartProperties = {
   title: "Chosen Options",
@@ -20,6 +21,9 @@ const chartProperties = {
 function Page11 (props) {
   return (
     <div name ='page11' className='flexFixedSize flexContainerColumn fullPage'>
+      <SpeechBubble top={true} text={[
+          "Look how the other humans responded!"
+      ]}/>
       <BarChart
           fill={chartProperties.fill}
           title= {chartProperties.title}
@@ -35,9 +39,6 @@ function Page11 (props) {
           yTicks= {chartProperties.yTicks}
           yLabel = {chartProperties.yLabel}
           barWidth = {chartProperties.barWidth}/>
-      {/*<BarChart data={chartProperties.data}*/}
-                {/*size={[chartProperties.width,chartProperties.height]*/}
-                {/*} />*/}
     </div>
   );
 }

@@ -14,11 +14,11 @@ function Datasource (props) {
         <div className="source_name heading">
             {props.actionDescription} <img src={props.iconSrc} height='57.5px' alt='datasource icon' className='Datasource_image' />
         </div>
-        <div className="source_options">
+        <div className="source_options text">
             <ul>
                 <li>{props.options['1']}</li>
                 <li>{props.options['2']}</li>
-                <li>{props.options['3']}</li>
+                <li className="last">{props.options['3']}</li>
             </ul>
         </div>
       </div>
