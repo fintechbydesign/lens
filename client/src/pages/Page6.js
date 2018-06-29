@@ -5,7 +5,7 @@ function Page6 (props) {
     return (
         <div name ='page6' className='flexFixedSize flexContainerRow fullPage' id="page6">
             <h1>
-                What next?
+                Loading!
             </h1>
         </div>
     );

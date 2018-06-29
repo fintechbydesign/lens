@@ -52,3 +52,11 @@ svg text {
 .fullPage{
   height: 90vh;
 }
+.heading{
+  font-size: 50pt;
+  color: var(--persona-green);
+}
+.text{
+  font-size: 20pt;
+  color: white;
+}

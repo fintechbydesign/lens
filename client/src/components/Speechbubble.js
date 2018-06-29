@@ -7,11 +7,12 @@ import "./Speechbubble.css"
 
 function SpeechBubble(props) {
     return <div className="">
-                <img src={props.top ? "/boxes/topchatbox.svg" : "/boxes/centerchatbox.svg"}/>
-                <div className="speechBubble_text">
-                    {props.text.map(text => <p>{text}</p>)}
-                </div>
-            </div>
+        <img className={props.top? "logo_top" : "logo_center"} src="logos/logo.png" alt='lens icon'/>
+        <img className={props.top? "top" : "center"} src={props.top ? "/boxes/topchatbox.svg" : "/boxes/centerchatbox.svg"}/>
+        <div className="text">
+            {props.text.map(text => <p>{text}</p>)}
+        </div>
+    </div>
 }
 
 export default SpeechBubble

@@ -1,0 +1,14 @@
+.result_container {
+    align-items: center;
+    border: lightgray 4px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.result_selected {
+    border: red 4px solid;
+}
+
+.result_image {
+    margin-right: 15px;
+}

@@ -1,3 +1,20 @@
-.speechBubble_text{
-    position: absolute;
+.speechBubble_text {
+
+}
+.center{
+    width: 643.33px;
+    height: 146.25px;
+}
+.top{
+    width: 835.37px;
+    height: 147.25px;
+}
+
+.logo_top{
+    width: 76.63px;
+    height: 78px;
+}
+.logo_center{
+    width: 355px;
+    height: 352px;
 }

@@ -11,8 +11,8 @@ function Datasource (props) {
   return (
     <div className={classes}>
       <div className='flexDynamicSize'>
-        <div className="source_name">
-            {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='Datasource_image' />
+        <div className="source_name heading">
+            {props.actionDescription} <img src={props.iconSrc} height='57.5px' alt='datasource icon' className='Datasource_image' />
         </div>
         <div className="source_options">
             <ul>

@@ -28,7 +28,7 @@ class Pages extends Component {
           <Page4 /> {/* Job Found TODO: This screen needs props for name,job,salary and hours or just the name and the rest can be loaded dynamically*/}
           <Page5  buttons={this.props.buttons}/> {/* Data source choosing */}
           <Page6 /> {/* Data source loading */}
-          <Page7 /> {/* Results Screen */}
+          <Page7 jobGotten={false}/> {/* Results Screen TODO: This screen needs the prop for if the job was gotten */}
           <Page8 /> {/* Detailed Results Screen */}
           <Page9 /> {/* Poll Intro */}
           <Page10 buttons={this.props.buttons}/> {/* Poll */}

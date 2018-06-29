@@ -14,16 +14,16 @@ function Persona (props) {
         <div className={classes}>
             <img src={props.avatarSrc} width='100' height='40' alt='datasource icon' className='persona_image' />
             <div className='flexDynamicSize'>
-                <div>
+                <div className="heading">
                     {props.nameAge}
                 </div>
-                <div>
+                <div className="text">
                     {props.location}
                 </div>
-                <div>
+                <div className="text">
                     {props.currentJob}
                 </div>
-                <div>
+                <div className="text">
                     {props.description}
                 </div>
             </div>
