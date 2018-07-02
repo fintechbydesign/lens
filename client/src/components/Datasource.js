@@ -5,9 +5,6 @@ function Datasource (props) {
   const classes = props.selected ?
     'flexContainerRow Datasource_container Datasource_selected' :
     'flexContainerRow Datasource_container';
-  const selected = props.selected ?
-    (<img src='/Check_mark.svg' alt='datasource selected' width='75' height='30'/>) :
-    null;
   return (
     <div className={classes}>
         <div className={props.selected ? "data_button_selected" : "data_button"}><p>&#60;</p></div>

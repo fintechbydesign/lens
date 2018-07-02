@@ -31,7 +31,7 @@ class Pages extends Component {
           <Page5 buttons={this.props.buttons}/> {/* Data source choosing */}
           <Page6 /> {/* Data source loading */}
           <Page7 jobGotten={this.props.jobGotten}/> {/* Results Screen */}
-          <Page8 results={this.props.choices}/> {/* Detailed Results Screen */}
+          <Page8 results={this.props.choices} jobGotten={this.props.jobGotten}/> {/* Detailed Results Screen */}
           <Page9 /> {/* Poll Intro */}
           <Page10 buttons={this.props.buttons}/> {/* Poll */}
           <Page11 data={this.props.data} /> {/* Data Viz */}
