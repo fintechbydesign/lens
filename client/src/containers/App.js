@@ -104,7 +104,7 @@ class App extends Component {
     // Set the persona when the page is reached
     if (nextPage === 6 /* Data source loading screen */) {
       // TODO There needs to be some logic here that finds out which of the 18 choices where taken
-      let choices = [];
+      let choices = this.state.choices;
       this.setState({
         jobGotten: jobGotten(choices),
         choices: choices

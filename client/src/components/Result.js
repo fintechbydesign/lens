@@ -9,6 +9,7 @@ function Result (props) {
     if(props.active){
         return (
             <div className="flexContainerRow result_container result_active">
+              <div className={"result_button_selected"}><p>&#60;</p></div>
                 <div className='flexDynamicSize'>
                     <div className="heading">
                         {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='result_image' />
@@ -26,6 +27,7 @@ function Result (props) {
     else{
         return (
             <div className="flexContainerRow result_container result_inactive">
+              <div className={"result_button"}><p>&#60;</p></div>
                 <div className='flexDynamicSize'>
                     <div className="heading">
                         {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='result_image' />
