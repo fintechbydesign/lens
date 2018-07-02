@@ -94,7 +94,7 @@ class App extends Component {
       // This implies if there are multiple personas chosen the last one is taken
       for (let i = 0; i < this.state.buttons.on.length; i++) {
         if (this.state.buttons.on[i])
-          chosenButton = i;
+          chosenButton = i - 1; // Buttons are 1 indexed
       }
       this.setState({
         persona: getPersonaFromIndex(chosenButton)
@@ -116,14 +116,13 @@ class App extends Component {
       this.reset(true) // Reset but don't save the journey
     }else {
       this.setState({
-        // ...this.state, TODO: Test this
-        // currentPage: nextPage,
-        // buttons: {
-        //   ...this.state.buttons,
-        //   on: initialState.buttons.on,
-        //   enable: [...pageStates[nextPage].buttonEnablement]
-        // },
-        ...initialState,
+        ...this.state,
+        currentPage: nextPage,
+        buttons: {
+          ...this.state.buttons,
+          on: initialState.buttons.on,
+          enable: [...pageStates[nextPage].buttonEnablement]
+        },
         data: getStatsFromJourneys(),
       });
     }
