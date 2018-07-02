@@ -17,6 +17,7 @@ import {
   pageStates,
   slowScrollOptions } from './AppConstants';
 import {saveJourney, getStatsFromJourneys} from "../data/stats";
+import {jobGotten, getPersonaFromIndex} from "../data/PersonaInfo";
 
 const TOTAL_PAGES = 12;
 class App extends Component {
@@ -76,34 +77,53 @@ class App extends Component {
     const nextPage = currentPage === TOTAL_PAGES ? 0 : currentPage + 1;
     const nextPageName = `page${nextPage}`;
     // If the saveButtons pageState is set, the button layout is saved into the journey
-    // This is useful for the Poll, but will probably also come in handy when saving the choices
-    // TODO: Is this distinction even important? Things to consider are
-    // 1. Adds extra logic here
-    // 2. pageStates[currentPage].saveButtons will always be this.state.buttons.length == 0
-    // 3. But we might not have access to pageStates[currentPage].saveButtons
-    // 4. When saving the JSON we don't want a ton of empty arrays
     journey[nextPageName] = {
       start: Date.now(),
       buttons: pageStates[currentPage].saveButtons ? this.state.buttons.on : []
     };
     scroller.scrollTo(nextPageName, slowScrollOptions);
 
-    //Save Interaction when it reaches the Data Visualisation
+    // Save Interaction when it reaches the Data Visualisation
     if (nextPage === TOTAL_PAGES - 1){
       saveJourney(journey) // Save the journey, so the data for the current journey is considered in the Data Vis
     }
-    //Reset Interaction when it "loops"
+    // Set the persona when the page is reached
+    if (nextPage === 3 /* Persona loading screen */) {
+      // Find out which button was pressed
+      let chosenButton = 0;
+      // This implies if there are multiple personas chosen the last one is taken
+      for (let i = 0; i < this.state.buttons.on.length; i++) {
+        if (this.state.buttons.on[i])
+          chosenButton = i;
+      }
+      this.setState({
+        persona: getPersonaFromIndex(chosenButton)
+      })
+    }
+
+    // Set the persona when the page is reached
+    if (nextPage === 6 /* Data source loading screen */) {
+      // TODO There needs to be some logic here that finds out which of the 18 choices where taken
+      let choices = [];
+      this.setState({
+        jobGotten: jobGotten(choices),
+        choices: choices
+      })
+    }
+
+    // Reset Interaction when it "loops"
     if (nextPage === 0){
       this.reset(true) // Reset but don't save the journey
     }else {
       this.setState({
-        ...this.state,
-        currentPage: nextPage,
-        buttons: {
-          ...this.state.buttons,
-          on: initialState.buttons.on,
-          enable: [...pageStates[nextPage].buttonEnablement]
-        },
+        // ...this.state, TODO: Test this
+        // currentPage: nextPage,
+        // buttons: {
+        //   ...this.state.buttons,
+        //   on: initialState.buttons.on,
+        //   enable: [...pageStates[nextPage].buttonEnablement]
+        // },
+        ...initialState,
         data: getStatsFromJourneys(),
       });
     }
@@ -153,7 +173,8 @@ class App extends Component {
       <div className='container flexContainerRow'>
         {this.renderButtons()}
         <div className='flexDynamicSize container flexContainerColumn'>
-          <Pages buttons={this.state.buttons} data={this.state.data}/>
+          <Pages buttons={this.state.buttons} data={this.state.data} persona={this.state.persona}
+                 choices={this.state.choices} jobGotten={this.state.jobGotten}/>
           {this.renderInstruction()}
           {this.renderSubmit()}
         </div>

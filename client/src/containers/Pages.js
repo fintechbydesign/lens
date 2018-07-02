@@ -15,7 +15,8 @@ import Page12 from '../pages/Page12';
 import './Pages.css';
 
 /*
- Page selection
+ Page selection.
+ This Component needs a lot of props that get updated during the journey
  */
 class Pages extends Component {
   render() {
@@ -25,11 +26,12 @@ class Pages extends Component {
           <Page1 /> {/* Intro */}
           <Page2 buttons={this.props.buttons}/> {/* Persona Choosing */}
           <Page3 /> {/* Persona Loading Screen */}
-          <Page4 /> {/* Job Found TODO: This screen needs props for name,job,salary and hours or just the name and the rest can be loaded dynamically*/}
-          <Page5  buttons={this.props.buttons}/> {/* Data source choosing */}
+          <Page4 name={this.props.persona.name} job={this.props.persona.job} salary={this.props.persona.salary}
+                 hours={this.props.persona.hours}/> {/* Job Found */}
+          <Page5 buttons={this.props.buttons}/> {/* Data source choosing */}
           <Page6 /> {/* Data source loading */}
-          <Page7 jobGotten={false}/> {/* Results Screen TODO: This screen needs the prop for if the job was gotten */}
-          <Page8 /> {/* Detailed Results Screen */}
+          <Page7 jobGotten={this.props.jobGotten}/> {/* Results Screen */}
+          <Page8 results={this.props.choices}/> {/* Detailed Results Screen */}
           <Page9 /> {/* Poll Intro */}
           <Page10 buttons={this.props.buttons}/> {/* Poll */}
           <Page11 data={this.props.data} /> {/* Data Viz */}

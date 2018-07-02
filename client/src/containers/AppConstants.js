@@ -31,8 +31,12 @@ const defaultButtonTrueArray = Object.freeze([
   'dummy', true, true, true, true, true, true, true, true, true
 ]);
 
-const pollButtonTrueArray = Object.freeze([
-    'dummy', true, true, true, true, false, false, false, false, false
+const pollButtonArray = Object.freeze([
+  'poll', true, true, true, true, false, false, false, false, false
+]);
+
+const choicesButtonArray = Object.freeze([
+  'choices', false, false, false, false, false, false, true, true, true
 ]);
 
 
@@ -44,7 +48,15 @@ const initialState = Object.freeze({
     on: defaultButtonFalseArray
   }),
   journey: {},
-  data :[]
+  data: [],
+  persona: {
+    name: "Jeff",
+    job: "Highschool Teacher",
+    salary: "22,000",
+    hours: "38",
+  },
+  choices: [],
+  jobGotten: false,
 });
 
 // Page names are just for readability here
@@ -124,7 +136,7 @@ const pageStates = Object.freeze([
     pageName: "Poll Intro"
   }),
   Object.freeze({
-    buttonEnablement: pollButtonTrueArray,
+    buttonEnablement: pollButtonArray,
     index: 10,
     instruction: 'Click next to see what other humans said',
     saveButtons: true,
