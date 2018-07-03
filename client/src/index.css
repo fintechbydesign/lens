@@ -63,3 +63,6 @@ svg text {
 .last{
   margin-bottom: 0;
 }
+.loading{
+  margin: auto;
+}

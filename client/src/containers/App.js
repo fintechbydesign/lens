@@ -127,6 +127,10 @@ class App extends Component {
       });
     }
 
+    // If the next page is a loading screen "wait" 3 seconds and call this method again
+      if(pageStates[nextPage].loadingScreen){
+        setTimeout(() => this.nextPage(), 3000)
+      }
 
   }
 

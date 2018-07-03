@@ -39,6 +39,9 @@ const choicesButtonArray = Object.freeze([
   'choices', false, false, false, false, false, false, true, true, true
 ]);
 
+const personaButtonArray = Object.freeze([
+    'personas', true, true, true, true, true, true, false, false, false
+]);
 
 const initialState = Object.freeze({
   currentPage: 0,
@@ -148,7 +151,7 @@ const pageStates = Object.freeze([
     pageName: "Intro"
   }),
   Object.freeze({
-    buttonEnablement: defaultButtonTrueArray,
+    buttonEnablement: personaButtonArray,
     index: 2,
     instruction: 'Click next to find a job',
     saveButtons: true,

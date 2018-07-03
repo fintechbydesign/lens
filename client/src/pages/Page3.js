@@ -6,10 +6,8 @@ import './Page3.css';
 
 function Page3 (props) {
     return <div name ='page3' className='fullPage flexFixedSize flexContainerRow' id="page3">
-        <div className='speechBubble Page1_speechBubble'>
-            <h2>
-                Loading!
-            </h2>
+        <div className='loading'>
+            <img src={"/loading.gif"}/>
         </div>
     </div>
 }
