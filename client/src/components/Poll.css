@@ -1,11 +1,44 @@
 .Poll_container {
     align-items: center;
-    border: lightgray 4px solid;
-    margin: 5px;
+    border: var(--border-blue) 1px solid;
+    border-radius: 10px;
+    margin-bottom: 40px;
     padding: 5px;
     height: 230px;
 }
 
 .Poll_selected {
-    border: red 4px solid;
+    border: var(--persona-green) 1px solid;
+    box-shadow: 2px 2px 17px var(--persona-green);
+}
+.poll_button{
+    background-color: var(--persona-green);
+    border-radius: 8px;
+    width: 100px;
+    height: 54px;
+    text-align: right;
+    top: -85px;
+    position: relative;
+    font-size: 30pt;
+
+}
+.poll_button p{
+    position: relative;
+    top: -28px;
+    right: 5px;
+}
+
+.poll_button_selected{
+    background-color: var(--persona-green);
+    border-radius: 3px 10px 10px 3px;
+    width: 100px;
+    height: 230px;
+    text-align: right;
+    font-size: 30pt;
+    filter: opacity(0.7);
+}
+.poll_button_selected p{
+    position: relative;
+    top: -25px;
+    right: 5px;
 }
