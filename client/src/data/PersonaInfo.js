@@ -40,7 +40,8 @@ const Jeff = {
       rating: {points: -1, text: "You’re only rated 3.41 stars, showing that you might not treat everyone respectfully."},
       tips: {points: 1, text: "You’ve tipped the driver on all your trips this week, highlighting that you’re appreciative."}
     }
-  }
+  },
+    description: "A career as a high school teacher offers you the chance to teach a subject you love and to engage pupils in learning for their future. You’ll plan lessons in line with national objectives, with the aim of ensuring a healthy culture of learning."
   };
 
 const Mary = {

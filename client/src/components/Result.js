@@ -16,11 +16,10 @@ function Result (props) {
                         {props.actionDescription}
                     </div>
                     <div className="results_options text">
-                        <ul>
-                            {[1,2,3].map((i) => <li className={props.options[i].active ? "result_active" : "result_inactive"}>
-                                <p className={props.options[i].active ? "source_option_active" : "source_option"}>{i}</p>
-                                {props.options[i].text}</li>)}
-                        </ul>
+                        {[1,2,3].map((i) => <div>
+                            <p className={props.options[i].active ? "result_option_active" : "result_option"}>{i}</p>
+                            <p className={props.options[i].active ? "result_active" : "result_inactive"}>{props.options[i].text}</p>
+                        </div>)}
                     </div>
                 </div>
             </div>);

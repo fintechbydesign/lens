@@ -31,6 +31,32 @@
     margin: 0;
 }
 
+.result_option{
+    float: left;
+    display: inline-block;
+    margin: 0 15px 0 0;
+    color: var(--choice-light-blue);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border: 3px solid var(--choice-light-blue);
+    text-align: center;
+}
+.result_option_active{
+    float: left;
+    display: inline-block;
+    margin: 0 15px 0 0;
+    color: black;
+    background-color: var(--choice-light-blue);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border: 3px solid var(--choice-light-blue);
+    text-align: center;
+}
+
 .results_options li{
     margin-bottom: 12px;
     list-style: none;

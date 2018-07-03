@@ -19,8 +19,11 @@ function Page4 (props) {
             ]} class={"one-line-top"}/>
             <div className={"jobDescription"}>
                 <p className={"heading"}>{props.job}</p>
-                <p className={"text"}>{props.salary} salary</p>
-                <p className={"text"}>{props.hours} hours/week</p>
+                <div className={"text"}>
+                    <p className>{props.description}</p>
+                    <p className>{props.salary} salary</p>
+                    <p className>{props.hours} hours/week</p>
+                </div>
             </div>
         </div>
     );
