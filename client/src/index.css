@@ -66,3 +66,27 @@ svg text {
 .loading{
   margin: auto;
 }
+.one-line-top{
+  position: relative;
+  top: -98px;
+  right: -133px;
+  line-height: 3pt;
+}
+.two-line-center{
+  position: relative;
+  top: -110px;
+  right: -418px;
+  line-height: 3pt;
+}
+.three-line-center {
+  position: relative;
+  top: -120px;
+  right: -418px;
+  line-height: 3pt;
+}
+.three-line-top{
+  position: relative;
+  top: -118px;
+  right: -133px;
+  line-height: 3pt;
+}

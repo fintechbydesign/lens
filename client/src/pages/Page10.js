@@ -51,7 +51,7 @@ function Page10 (props) {
                 "Would you be willing to share your personal data",
                 "to get a job, prove your identity, or with other",
                 "services and systems?"
-            ]}/>
+            ]} class={"three-line-top"}/>
             {poll}
         </div>
     );

@@ -3,7 +3,6 @@
     border: var(--border-blue) 1px solid;
     border-radius: 10px;
     margin-bottom: 40px;
-    padding: 5px;
     height: 230px;
 }
 
@@ -11,12 +10,51 @@
     border: var(--persona-green) 1px solid;
     box-shadow: 2px 2px 17px var(--persona-green);
 }
+.source_name{
+    display: inline-block;
+}
+
+.Datasource_text{
+    margin-top: 15px;
+}
 
 .Datasource_image {
-    margin-right: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    height: 42px;
+    display: inline;
 }
 .source_options li{
-    margin-bottom: 15pt;
+    margin-bottom: 12px;
+    list-style: none;
+}
+
+.source_options ul{
+    padding-left: 20px;
+}
+
+.source_option{
+    display: inline-block;
+    margin: 0 15px 0 0;
+    color: var(--choice-light-blue);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border: 3px solid var(--choice-light-blue);
+    text-align: center;
+}
+.source_option_active{
+    display: inline-block;
+    margin: 0 15px 0 0;
+    color: black;
+    background-color: var(--choice-light-blue);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border: 3px solid var(--choice-light-blue);
+    text-align: center;
 }
 .data_button{
     background-color: var(--persona-green);

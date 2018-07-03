@@ -23,7 +23,7 @@ function Page11 (props) {
     <div name ='page11' className='flexFixedSize flexContainerColumn fullPage'>
       <SpeechBubble top={true} text={[
           "Look how the other humans responded!"
-      ]}/>
+      ]} class={"one-line-top"}/>
       <BarChart
           fill={chartProperties.fill}
           title= {chartProperties.title}

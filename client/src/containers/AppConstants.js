@@ -82,9 +82,9 @@ const initialState = Object.freeze({
     {
       actionDescription: 'Fitbit',
       options: {
-        1: {text: "The consistency of your heart rate shows that you are a healthy individual", active: false},
+        1: {text: "heartrate", active: false},
         2: {
-          text: "You’ve never reached your daily step count goal; it may be difficult to keep up in an active classroom.",
+          text: "steps",
           active: false
         },
         3: {text: "You average 5 hours of sleep per night, meaning you will be too exhausted to teach.", active: true},
@@ -116,7 +116,7 @@ const initialState = Object.freeze({
       actionDescription: 'Uber',
       options: {
         1: {
-          text: "You use Uber to travel to bars on weekdays, revealing you may have a drinking problem.",
+          text: "locations",
           active: false
         },
         2: {text: "You’re only rated 3.41 stars, showing that you might not treat everyone respectfully", active: true},
@@ -125,7 +125,7 @@ const initialState = Object.freeze({
           active: true
         },
       },
-      iconSrc: '/logos/fitbit.svg',
+      iconSrc: '/logos/uber.svg',
       active: true,
     }
   ],

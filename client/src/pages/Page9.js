@@ -9,7 +9,7 @@ function Page9 (props) {
                 ["After all that hard work, have you",
                  "ever thought about sharing your own",
                  "personal data?"]
-            }/>
+            } class={"three-line-center"}/>
         </div>
     );
 }

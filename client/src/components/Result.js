@@ -11,14 +11,15 @@ function Result (props) {
             <div className="flexContainerRow result_container result_active">
               <div className={"result_button_selected"}><p>&#60;</p></div>
                 <div className='flexDynamicSize'>
-                    <div className="heading">
-                        {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='result_image' />
+                    <img src={props.iconSrc}  alt='datasource icon' className='result_image' />
+                    <div className="heading result_name">
+                        {props.actionDescription}
                     </div>
                     <div className="results_options text">
                         <ul>
-                            <li className={!props.options['1'].active ? "result_inactive" : ""}>{props.options['1'].text}</li>
-                            <li className={!props.options['2'].active ? "result_inactive" : ""}>{props.options['2'].text}</li>
-                            <li className={!props.options['3'].active ? "result_inactive last" : "last"}>{props.options['3'].text}</li>
+                            {[1,2,3].map((i) => <li className={props.options[i].active ? "result_active" : "result_inactive"}>
+                                <p className={props.options[i].active ? "source_option_active" : "source_option"}>{i}</p>
+                                {props.options[i].text}</li>)}
                         </ul>
                     </div>
                 </div>
@@ -29,14 +30,13 @@ function Result (props) {
             <div className="flexContainerRow result_container result_inactive">
               <div className={"result_button"}><p>&#60;</p></div>
                 <div className='flexDynamicSize'>
-                    <div className="heading">
-                        {props.actionDescription} <img src={props.iconSrc} width='100' height='40' alt='datasource icon' className='result_image' />
+                    <img src={props.iconSrc}  alt='datasource icon' className='result_image' />
+                    <div className="heading result_name">
+                        {props.actionDescription}
                     </div>
                     <div className="results_options text">
                         <ul>
-                            <li >{props.options['1']}</li>
-                            <li >{props.options['2']}</li>
-                            <li >{props.options['3']}</li>
+                            {[1,2,3].map((i) => <li><p className="source_option">{i}</p>{props.options[i]}</li>)}
                         </ul>
                     </div>
                 </div>

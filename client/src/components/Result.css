@@ -3,8 +3,11 @@
     border: var(--border-blue) 1px solid;
     border-radius: 10px;
     margin-bottom: 40px;
-    padding: 5px;
     height: 230px;
+}
+
+.result_name{
+    display: inline-block;
 }
 
 .result_selected {
@@ -13,7 +16,10 @@
 }
 
 .result_image {
-    margin-right: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    height: 42px;
+    display: inline;
 }
 .result_active{
 
@@ -26,7 +32,8 @@
 }
 
 .results_options li{
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    list-style: none;
 }
 
 .result_button {

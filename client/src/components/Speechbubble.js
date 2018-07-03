@@ -10,7 +10,7 @@ import "./Speechbubble.css"
 
 function SpeechBubble(props) {
     // That double ternary though..
-    const textClass = props.class ? props.class : props.top? "text_top text" : "text_center text";
+    const textClass = props.class ? [props.class,"text"].join(" ") : props.top? "text_top text" : "text_center text";
 
     return <div className={props.top? "top" : "center"}>
         <img className={props.top? "logo_top" : "logo_center"} src="logos/logo.png" alt='lens icon'/>

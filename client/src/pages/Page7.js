@@ -9,7 +9,7 @@ function Page7 (props) {
             <SpeechBubble top={false} text={[
                 props.jobGotten ? "You got the Job!" : "You didn't get the job.",
                 "Find out why by clicking next."
-            ]}/>
+            ]} class={"two-line-center"}/>
         </div>
     );
 }
