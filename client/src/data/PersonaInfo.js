@@ -81,8 +81,9 @@ const Mary = {
       locations: {points: 1, text: "You allow your driver to take the quickest route, indicating that you're courteous of others’ time."},
       rating: {points: 1, text: "You have a rating of 4.82, showing you are very respectful and polite."},
       tips: {points: 1, text: "You always tip your drivers, demonstrating you appreciate good customer service."}
-    }
-  }
+    },
+  },
+    description: "Office Managers ensure the smooth running of an office on a day-to-day basis and may manage a team of administrative or support staff. Responsibilities typically include: managing office budgets, liaising with staff, and implementing and maintaining office procedures."
 };
 
 const Julie = {
@@ -122,8 +123,9 @@ const Julie = {
       locations: {points: 0, text: "We couldn't find an account associated with you."},
       rating: {points: 0, text: "We couldn't find an account associated with you."},
       tips: {points: 0, text: "We couldn't find an account associated with you."}
-    }
-  }
+    },
+  },
+    description: "Office Managers ensure the smooth running of an office on a day-to-day basis and may manage a team of administrative or support staff. Responsibilities typically include: managing office budgets, liaising with staff, and implementing and maintaining office procedures."
 };
 
 const Wang = {
@@ -164,7 +166,8 @@ const Wang = {
       rating: {points: 1, text: "You are rated 4.92 stars, indicating you're very kind and professional."},
       tips: {points: 0, text: "You never have tipped a driver."}
     }
-  }
+  },
+    description: "The Senior Trust Advisor will administer estate and personal trust accounts including testamentary and intervivos trusts, Charitable Trusts, Conservatorships, Guardianships, Life Insurance Trusts, Private Family Foundations, Special Needs Trusts, and other Agency accounts."
 };
 
 const Ana = {
@@ -205,7 +208,8 @@ const Ana = {
       rating: {points: 1, text: "You have a 4.63 rating, showing you treat drivers with courtesy."},
       tips: {points: 0, text: "You never have tipped a driver."}
     }
-  }
+  },
+    description: "A social media manager leads an organisation’s social media strategy in order to boost visibility and customer and client engagement. This involves developing a strategy, producing good content, analysing usage data, and managing projects and campaigns."
 };
 
 const Martin = {
@@ -246,7 +250,8 @@ const Martin = {
       rating: {points: "F", text: "You have a 1.2 rating, revealing your lack of respect for others."},
       tips: {points: 0, text: "You never have tipped a driver."}
     }
-  }
+  },
+    description: "A Lead Trainer is responsible for hiring, developing and managing performance of qualified Personal Trainers and ensuring that all club members have access to a highly trained fitness staff able to provide fitness counseling and training."
 };
 
 const Personas = [Jeff,Mary,Julie,Wang,Ana,Martin];
