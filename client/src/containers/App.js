@@ -17,7 +17,7 @@ import {
   pageStates,
   slowScrollOptions } from './AppConstants';
 import {saveJourney, getStatsFromJourneys} from "../data/stats";
-import {jobGotten, getPersonaFromIndex} from "../data/PersonaInfo";
+import {jobGotten, getPersonaFromIndex, convertToChoices} from "../data/PersonaInfo";
 
 const TOTAL_PAGES = 12;
 class App extends Component {
@@ -41,17 +41,47 @@ class App extends Component {
     listenForArduino(keyToFunctionMap);
   }
 
+  // This method determines what happens when the buttons 1-9 are pressed, there are two cases for this:
+  // Datasource case:
+  //  When the user is selecting the datasources the buttons have to work differently then in the rest of the screens
+  //  This is because the buttons work slightly differently on that screen. The first button press enables the overall
+  //  datasource, the second button press selects the sub datasources. So the state where the datasources are kept
+  //  has to be changed to the last selected button.
+  // Anywhere else case:
+  // Sets the buttons.on array in the state
   buttonSelected (index) {
-    if (this.state.buttons.enable[index]) {
-      const newOn = [...this.state.buttons.on];
-      newOn[index] = !newOn[index];
-      this.setState({
-        ...this.state,
-        buttons: {
-          ...this.state.buttons,
-          on: newOn
+    if(this.state.buttons.enable[0] === "data"){
+      // If the User hits 1-6, set the lastSelected button to active
+      let newState = this.state.dataSource;
+        if(index < 7){
+          // Reset all the sub datasources
+          if(this.state.buttons.on[index]){
+              newState[index - 1].options[1].active = false;
+              newState[index - 1].options[2].active = false;
+              newState[index - 1].options[3].active = false;
+              this.last = null;
+          }else{
+              this.last = index;
+          }
+
         }
-      });
+      // If the User hits 7-9 set the sub datasources from the lastSelected button
+        else{
+          if(this.last){
+            newState[this.last - 1].options[index - 6].active = !newState[this.last - 1].options[index - 6].active;
+          }
+        }
+    }
+    if (this.state.buttons.enable[index]) {
+        const newOn = [...this.state.buttons.on];
+        newOn[index] = !newOn[index];
+        this.setState({
+            ...this.state,
+            buttons: {
+                ...this.state.buttons,
+                on: newOn
+            }
+        });
     }
   }
   // Resets the interaction, shouldNotSave is a boolean that determines if the journey should not be saved on
@@ -188,7 +218,7 @@ class App extends Component {
         {this.renderButtons()}
         <div className='flexDynamicSize container flexContainerColumn'>
           <Pages buttons={this.state.buttons} data={this.state.data} persona={this.state.persona}
-                 choices={this.state.choices} jobGotten={this.state.jobGotten}
+                 choices={convertToChoices(this.state.persona,this.state.dataSource)} jobGotten={this.state.jobGotten}
                  properties={this.state.dataSource}/>
           {this.renderInstruction()}
           {this.renderSubmit()}

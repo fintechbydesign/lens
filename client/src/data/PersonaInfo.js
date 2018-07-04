@@ -271,3 +271,79 @@ function calculateScore(choices){
 export function jobGotten(choices){
   return calculateScore(choices) > 0;
 }
+
+// The difference between the chosen datasources and the choices is that one is unrelated to the persona
+// and the other one contains the right texts and points for the personas
+export function convertToChoices(persona, dataSource){
+  return [
+      {
+          actionDescription: 'Facebook',
+          options: {
+              1: "likes",
+              2: "comments",
+              3: "posts",
+          },
+          iconSrc: '/logos/facebook.svg',
+          active: false,
+      },
+      {
+          actionDescription: 'YouTube',
+          options: {
+              1: {text: "You’ve watched 13 DIY videos this week, showcasing your natural curiosity.", active: true},
+              2: {text: "You're not watching your subscriptions, highlighting a lack of engagement.", active: true},
+              3: {text: "You actively interact with fellow users, demonstrating a willingness to help others", active: true},
+          },
+          iconSrc: '/logos/youtube.svg',
+          active: true,
+      },
+      {
+          actionDescription: 'Fitbit',
+          options: {
+              1: {text: "heartrate", active: false},
+              2: {
+                  text: "steps",
+                  active: false
+              },
+              3: {text: "You average 5 hours of sleep per night, meaning you will be too exhausted to teach.", active: true},
+          },
+          iconSrc: '/logos/fitbit.svg',
+          active: true,
+      },
+      {
+          actionDescription: 'Instagram',
+          options: {
+              1: "following",
+              2: "posts",
+              3: "hashtags",
+          },
+          iconSrc: '/logos/instagram.svg',
+          active: false,
+      },
+      {
+          actionDescription: 'Amazon',
+          options: {
+              1: "purchases",
+              2: "reviews",
+              3: "delivery history",
+          },
+          iconSrc: '/logos/amazon.svg',
+          active: false,
+      },
+      {
+          actionDescription: 'Uber',
+          options: {
+              1: {
+                  text: "locations",
+                  active: false
+              },
+              2: {text: "You’re only rated 3.41 stars, showing that you might not treat everyone respectfully", active: true},
+              3: {
+                  text: "You’ve tipped the driver on all your trips this week, highlighting that you’re appreciative.",
+                  active: true
+              },
+          },
+          iconSrc: '/logos/uber.svg',
+          active: true,
+      }
+  ];
+}
