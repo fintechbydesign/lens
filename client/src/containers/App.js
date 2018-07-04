@@ -75,6 +75,12 @@ class App extends Component {
   nextPage () {
     const { currentPage, journey } = this.state;
     const nextPage = currentPage === TOTAL_PAGES ? 0 : currentPage + 1;
+    // This is for loading screens to block the submit button
+    // The submit button should also be blocked when nothing is selected for the personas or poll
+    if(this.block ||
+        (pageStates[currentPage].block && !this.state.buttons.on.slice(1,10).some((b) => b))){
+        return;
+    }
     const nextPageName = `page${nextPage}`;
     // If the saveButtons pageState is set, the button layout is saved into the journey
     journey[nextPageName] = {
@@ -90,9 +96,9 @@ class App extends Component {
     // Set the persona when the page is reached
     if (nextPage === 3 /* Persona loading screen */) {
       // Find out which button was pressed
-      let chosenButton = 0;
+      let chosenButton = 1;
       // This implies if there are multiple personas chosen the last one is taken
-      for (let i = 0; i < this.state.buttons.on.length; i++) {
+      for (let i = 1; i < this.state.buttons.on.length; i++) {
         if (this.state.buttons.on[i])
           chosenButton = i - 1; // Buttons are 1 indexed
       }
@@ -128,8 +134,13 @@ class App extends Component {
     }
 
     // If the next page is a loading screen "wait" 3 seconds and call this method again
+    // The submit button needs to be blocked here
       if(pageStates[nextPage].loadingScreen){
-        setTimeout(() => this.nextPage(), 3000)
+        this.block = true;
+        setTimeout(() => {
+          this.block = false;
+          this.nextPage();
+        }, 3000)
       }
 
   }
@@ -177,7 +188,8 @@ class App extends Component {
         {this.renderButtons()}
         <div className='flexDynamicSize container flexContainerColumn'>
           <Pages buttons={this.state.buttons} data={this.state.data} persona={this.state.persona}
-                 choices={this.state.choices} jobGotten={this.state.jobGotten}/>
+                 choices={this.state.choices} jobGotten={this.state.jobGotten}
+                 properties={this.state.dataSource}/>
           {this.renderInstruction()}
           {this.renderSubmit()}
         </div>

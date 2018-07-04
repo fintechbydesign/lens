@@ -28,7 +28,7 @@ class Pages extends Component {
           <Page3 /> {/* Persona Loading Screen */}
           <Page4 name={this.props.persona.name} job={this.props.persona.job} salary={this.props.persona.salary}
                  hours={this.props.persona.hours} description={this.props.persona.description}/> {/* Job Found */}
-          <Page5 buttons={this.props.buttons}/> {/* Data source choosing */}
+          <Page5 datasourceProperties={this.props.properties} buttons={this.props.buttons}/> {/* Data source choosing */}
           <Page6 /> {/* Data source loading */}
           <Page7 jobGotten={this.props.jobGotten}/> {/* Results Screen */}
           <Page8 results={this.props.choices} jobGotten={this.props.jobGotten}/> {/* Detailed Results Screen */}

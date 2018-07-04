@@ -15,7 +15,7 @@ function Datasource (props) {
             </div>
             <div className="source_options text">
                 <ul>
-                    {[1,2,3].map((i) => <li><p className="source_option">{i}</p>{props.options[i]}</li>)}
+                    {[1,2,3].map((i) => <li><p className={props.options[i].active? "source_option_active" :"source_option"}>{i}</p>{props.options[i].text}</li>)}
                 </ul>
             </div>
 
