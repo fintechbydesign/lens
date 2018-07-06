@@ -59,6 +59,7 @@ const initialState = Object.freeze({
     hours: "dummy",
     description: "dummy"
   },
+  pollChoice: "Agree",
   dataSource: [
         {
             actionDescription: 'Facebook',

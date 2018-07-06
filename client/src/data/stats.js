@@ -27,14 +27,21 @@ const getStatsFromJourneys = () => {
       stats1[4].Frequency += val['page11'].buttons[5] ? 1 : 0;
     }
   });
+  let total_stat1 = stats1.reduce((sum, stat) => sum + stat.Frequency,0);
+  stats1.map((stat) => {
+      stat.Frequency = Math.round(stat.Frequency / total_stat1 * 100);
+    });
+  // Second stat: How often was the job gotten
   let stats2 = [{ Gotten: "Yes", Frequency: 0}, {Gotten: "No", Frequency: 0}];
     journeys.map((val) => {
         if(val['page6']){
           val['page6'].jobGotten ? stats2[0].Frequency++ : stats2[1].Frequency++;
         }
     });
-
-  // Second stat: How often was the job gotten
+  let total_stat2 = stats2.reduce((sum, stat) => sum + stat.Frequency,0);
+  stats2.map((stat) => {
+      stat.Frequency = Math.round(stat.Frequency / total_stat2 * 100);
+  });
   return [stats1, stats2];
 };
 

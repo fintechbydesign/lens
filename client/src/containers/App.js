@@ -169,8 +169,16 @@ class App extends Component {
       journey[nextPageName].choices = choices;
       journey[nextPageName].jobGotten = jG;
     }
-    if (nextPage === 11){
+    if (nextPage === 11) /* Data Visualisation */{
+        // Find out which button was pressed
+        let chosenButton = 1;
+        // This implies if there are multiple personas chosen the last one is taken
+        for (let i = 1; i < this.state.buttons.on.length; i++) {
+            if (this.state.buttons.on[i])
+                chosenButton = i - 1; // Buttons are 1 indexed
+        }
         stateChange.data = getStatsFromJourneys();
+        stateChange.pollChoice = ["Strongly Agree","Agree","Indifferent","Disagree","Strongly Disagree"][chosenButton];
     }
 
     // Reset Interaction when it "loops"
@@ -244,7 +252,7 @@ class App extends Component {
         {this.renderButtons()}
         <div className='flexDynamicSize container flexContainerColumn'>
           <Pages buttons={this.state.buttons} data={this.state.data} persona={this.state.persona}
-                 jobGotten={this.state.jobGotten} properties={this.state.dataSource}/>
+                 jobGotten={this.state.jobGotten} properties={this.state.dataSource} pollChoice={this.state.pollChoice}/>
           {this.renderInstruction()}
           {this.renderSubmit()}
         </div>

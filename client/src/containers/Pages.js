@@ -35,7 +35,7 @@ class Pages extends Component {
           <Page8 results={convertToChoices(this.props.persona,this.props.properties)} jobGotten={this.props.jobGotten}/> {/* Detailed Results Screen */}
           <Page9 /> {/* Poll Intro */}
           <Page10 buttons={this.props.buttons}/> {/* Poll */}
-          <Page11 data={this.props.data} /> {/* Data Viz */}
+          <Page11 data={this.props.data} jobGotten={this.props.jobGotten} pollChoice={this.props.pollChoice}/> {/* Data Viz */}
           <Page12 /> {/* Goodbye */}
         </div>
     );

@@ -6,9 +6,17 @@ import { select } from 'd3-selection'
 import {axisBottom, axisLeft} from  'd3-axis'
 import './BarChart.css'
 class BarChart extends Component {
+  classFunction_job = d => ((d.Gotten === "Yes" && this.props.jobGotten) || (d.Gotten === "No"  && !this.props.jobGotten)) ? "bar" : "bar_inactive";
+  classFunction_choice = d => (d.Choice === this.props.pollChoice) ? "bar" : "bar_inactive";
+
   constructor(props){
     super(props);
-    this.createBarChart = this.createBarChart.bind(this)
+    this.createBarChart = this.createBarChart.bind(this);
+    if (typeof(props.jobGotten) === "boolean"){
+      this.classFunction = this.classFunction_job.bind(this);
+    }else{
+      this.classFunction = this.classFunction_choice.bind(this);
+    }
   }
   componentDidMount() {
     this.createBarChart()
@@ -18,7 +26,7 @@ class BarChart extends Component {
   }
   createBarChart() {
     const {
-      data,width,height,fill,x,y,barWidth,margin
+      data,width,height,fill,x,y,barWidth,margin,position
     } = this.props;
 
     const node = this.node;
@@ -42,7 +50,7 @@ class BarChart extends Component {
 
     g.append("g")
         .attr("class", "axis axis--y")
-        .call(axisLeft(yScale).ticks(10, "%").tickPadding(10))
+        .call(axisLeft(yScale).ticks(10).tickPadding(10))
         .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
@@ -50,13 +58,37 @@ class BarChart extends Component {
         .attr("text-anchor", "end")
         .text("Frequency");
 
+    g.selectAll(".text")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class","label");
+    g.selectAll('text.label')
+        .attr("x", d => {
+          if (d.Choice){
+          return xScale(x(d)) + 50
+        } else{
+          return xScale(x(d)) + 70
+        }
+        }).attr('dx', '+1em')
+        .attr("y", d => yScale(y(d))).attr('dy', '-0.1em')
+        .text(function(d) {return y(d) + "%"; });
+
     g.selectAll(".bar")
         .data(data)
         .enter().append("rect")
-        .attr("class", "bar")
-        .attr('x', d => xScale(x(d)))
+        .attr("class", this.classFunction)
+        .attr('x', d => {
+            if (d.Choice){
+                return xScale(x(d)) + 45
+            } else{
+                return xScale(x(d)) + 70
+            }
+        })
         .attr('y', d => yScale(y(d)))
-        .attr('width', xScale.bandwidth())
+        .attr('width', barWidth)
+        .attr('rx',15)
+        .attr('ry',15)
         .attr('height', d => height - yScale(y(d)));
   }
   render() {

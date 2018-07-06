@@ -78,6 +78,12 @@ svg text {
   right: -418px;
   line-height: 3pt;
 }
+.two-line-top{
+  position: relative;
+  top: -108px;
+  right: -133px;
+  line-height: 3pt;
+}
 .three-line-center {
   position: relative;
   top: -120px;

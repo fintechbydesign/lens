@@ -1,11 +1,34 @@
 .bar {
-    fill: steelblue;
+    fill: var(--choice-light-blue);
+}
+.bar_inactive{
+    fill: var(--background-blue);
+    stroke: var(--persona-green);
+    filter: drop-shadow(-2px -2px -17px var(--persona-green));
+    -webkit-filter: drop-shadow(-2px -2px -17px var(--persona-green));
+    stroke-width: 2px;
 }
 
-.bar:hover {
-    fill: brown;
-}
 
 .axis--x path {
+    fill: var(--border-blue);
+}
+
+.axis--y path {
+    fill: var(--border-blue);
+}
+.axis--y text {
     display: none;
+}
+.axis text{
+    font-size: 15pt;
+    fill: white;
+}
+.axis--x text{
+    font-size: 15pt;
+    fill: white;
+}
+.label{
+    fill: white;
+    font-size: 30pt;
 }
