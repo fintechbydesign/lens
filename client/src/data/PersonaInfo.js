@@ -260,24 +260,24 @@ export function getPersonaFromIndex(index){
   return Personas[index];
 }
 
-function calculateScore(choices){
+function calculateScore(points){
   // If any of the choices contain an automatic fail
-  if(choices.some(choice => choice === "F")){
+  if(points.some(point => point === "F")){
     return -1;
   }
-  return choices.reduce((sum, x) => sum + x);
+  return points.reduce((sum, x) => sum + x);
 }
 
-export function jobGotten(dataSource){
+export function jobGotten(choices){
   // Extract the points from the choices
-    let choices = [];
-    dataSource.map((d) => {
+    let points = [];
+    choices.map((d) => {
         [1,2,3].map((j) => {
             if(d.options[j].active)
-                choices.push(d.options[j].points)
+                points.push(d.options[j].points)
         });
     });
-  return calculateScore(choices) > 0;
+  return calculateScore(points) > 0;
 }
 
 // The difference between the chosen datasources and the choices is that one is unrelated to the persona

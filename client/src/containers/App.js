@@ -123,7 +123,7 @@ class App extends Component {
     // If the saveButtons pageState is set, the button layout is saved into the journey
     journey[nextPageName] = {
       start: Date.now(),
-      buttons: pageStates[currentPage].saveButtons ? this.state.buttons.on : []
+      buttons: pageStates[currentPage].saveButtons ? this.state.buttons.on : [],
     };
     scroller.scrollTo(nextPageName, slowScrollOptions);
 
@@ -131,6 +131,8 @@ class App extends Component {
     if (nextPage === TOTAL_PAGES - 1){
       saveJourney(journey) // Save the journey, so the data for the current journey is considered in the Data Vis
     }
+    // contains the specific state changes that are only triggered by specific pages
+    let stateChange = {};
     // Set the persona when the page is reached
     if (nextPage === 3 /* Persona loading screen */) {
       // Find out which button was pressed
@@ -140,16 +142,18 @@ class App extends Component {
         if (this.state.buttons.on[i])
           chosenButton = i - 1; // Buttons are 1 indexed
       }
-      this.setState({
-        persona: getPersonaFromIndex(chosenButton)
-      })
+      let persona = getPersonaFromIndex(chosenButton);
+      journey[nextPageName].persona = persona.name;
+      stateChange.persona = persona;
     }
 
     // Set the persona when the page is reached
     if (nextPage === 6 /* Data source loading screen */) {
-      this.setState({
-        jobGotten: jobGotten(convertToChoices(this.state.persona,this.state.dataSource)),
-      })
+      let choices = convertToChoices(this.state.persona,this.state.dataSource);
+      let jG = jobGotten(choices);
+      stateChange.jobGotten = jG;
+      journey[nextPageName].choices = choices;
+      journey[nextPageName].jobGotten = jG;
     }
 
     // Reset Interaction when it "loops"
@@ -165,6 +169,7 @@ class App extends Component {
           enable: [...pageStates[nextPage].buttonEnablement]
         },
         data: getStatsFromJourneys(),
+        ...stateChange,
       });
     }
 
