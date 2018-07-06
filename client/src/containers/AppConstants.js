@@ -53,11 +53,11 @@ const initialState = Object.freeze({
   journey: {},
   data: [],
   persona: {
-    name: "Jeff",
-    job: "Highschool Teacher",
-    salary: "22,000",
-    hours: "38",
-    description: "A career as a high school teacher offers you the chance to teach a subject you love and to engage pupils in learning for their future. You’ll plan lessons in line with national objectives, with the aim of ensuring a healthy culture of learning."
+    name: "dummy",
+    job: "dummy",
+    salary: "dummy",
+    hours: "dummy",
+    description: "dummy"
   },
   dataSource: [
         {

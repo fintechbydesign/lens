@@ -13,8 +13,7 @@ function Page8 (props) {
     "wasn't enough to get the job.",
     "Below is the good and bad."
   ];
-
-  const results = props.results.map((resultProps, index) => {
+  const results = props.results.map((resultProps) => {
         const mergedProps = {
             ...resultProps,
         };

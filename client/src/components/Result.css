@@ -42,6 +42,13 @@
     padding: 8px;
     border: 3px solid var(--choice-light-blue);
     text-align: center;
+    filter: opacity(0.1);
+}
+.result_active.result_text{
+    color:black;
+}
+.result_inactive.result_text{
+    color: black;
 }
 .result_option_active{
     float: left;

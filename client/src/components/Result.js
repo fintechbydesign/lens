@@ -10,7 +10,7 @@ function Result (props) {
         return (
             <div className="flexContainerRow result_container result_active">
               <div className={"result_button_selected"}><p>&#60;</p></div>
-                <div className='flexDynamicSize'>
+                <div className='flexDynamicSize result_text'>
                     <img src={props.iconSrc}  alt='datasource icon' className='result_image' />
                     <div className="heading result_name">
                         {props.actionDescription}
@@ -35,7 +35,7 @@ function Result (props) {
                     </div>
                     <div className="results_options text">
                         <ul>
-                            {[1,2,3].map((i) => <li><p className="source_option">{i}</p>{props.options[i]}</li>)}
+                            {[1,2,3].map((i) => <li><p className="source_option">{i}</p>{props.options[i].text}</li>)}
                         </ul>
                     </div>
                 </div>
