@@ -40,17 +40,25 @@ class App extends Component {
     }
     listenForArduino(keyToFunctionMap);
   }
-
-  // This method determines what happens when the buttons 1-9 are pressed, there are two cases for this:
+  //TODO this should probably be a switch? (probably not worth fixing right now though)
+  // This method determines what happens when the buttons 1-9 are pressed, there are three cases for this:
   // Datasource case:
   //  When the user is selecting the datasources the buttons have to work differently then in the rest of the screens
   //  This is because the buttons work slightly differently on that screen. The first button press enables the overall
   //  datasource, the second button press selects the sub datasources. So the state where the datasources are kept
   //  has to be changed to the last selected button.
+  // Poll or Persona case:
+  // Checks if their is already one button active, if yes, it doesn't set it
   // Anywhere else case:
   // Sets the buttons.on array in the state
   buttonSelected (index) {
-    if(this.state.buttons.enable[0] === "data"){
+    if(["poll","personas"].indexOf(this.state.buttons.enable[0]) !== -1){
+      // The first value of the button is a string
+      if(!this.state.buttons.on[index] && this.state.buttons.on.slice(1,10).some((i) => i)){
+        return;
+      }
+    }
+    else if(this.state.buttons.enable[0] === "data"){
       // If the User hits 1-6, set the lastSelected button to active
       let newState = this.state.dataSource;
         if(index < 7){

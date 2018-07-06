@@ -5,18 +5,20 @@ import SpeechBubble from "../components/Speechbubble";
 
 const pollProperties = [
     {
-        pollChoice: 'Definitely',
+        pollChoice: 'Stringly Agree',
         pollDescription: [
-            "I would share all my personal data.",
-            "For example, all of my Facebook and",
-            "Instagram data."],
+            "I would freely share all my",
+            "personal data. For example, all of",
+            "my Facebook, Amazon and Instagram",
+            "data."],
     },
     {
-        pollChoice: "Maybe",
+        pollChoice: "Agree",
         pollDescription: [
             "I would share some of my personal",
-            "data. For example, only my Facebook",
-            "posts and Instagram hashtags."
+            "data. For example, having control",
+            "picking only my Facebook posts and",
+            "Instagram hashtags."
         ],
 
     },
@@ -29,10 +31,18 @@ const pollProperties = [
         ],
     },
     {
-        pollChoice: "No",
+        pollChoice: "Disagree",
+        pollDescription: [
+            "I am hesitant to share any personal",
+            "data, even if it is only my Uber",
+            "rating or Fibit steps."
+        ],
+    },
+    {
+        pollChoice: "Strongly Disagree",
         pollDescription: [
             "I would not share any of my",
-            "personal data"
+            "personal data."
         ],
     }
 ];

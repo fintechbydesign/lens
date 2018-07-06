@@ -32,7 +32,7 @@ const defaultButtonTrueArray = Object.freeze([
 ]);
 
 const pollButtonArray = Object.freeze([
-  'poll', true, true, true, true, false, false, false, false, false
+  'poll', true, true, true, true, true, false, false, false, false
 ]);
 
 const dataButtonTrueArray = Object.freeze([

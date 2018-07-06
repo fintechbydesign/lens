@@ -1,5 +1,4 @@
 .Poll_container {
-    align-items: center;
     border: var(--border-blue) 1px solid;
     border-radius: 10px;
     margin-bottom: 40px;
@@ -16,15 +15,21 @@
     width: 100px;
     height: 54px;
     text-align: right;
-    top: -85px;
     position: relative;
     font-size: 30pt;
 
+}
+.poll_choice{
+    margin-left: 15px;
+    margin-top: 10px;
 }
 .poll_button p{
     position: relative;
     top: -28px;
     right: 5px;
+}
+.poll_description p{
+    margin: 12px 15px;
 }
 
 .poll_button_selected{
