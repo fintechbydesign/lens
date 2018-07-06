@@ -132,7 +132,7 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 1,
-    instruction: defaultInstruction,
+    instruction: "Click next to start exploring personal data",
     saveButtons: false,
     pageName: "Intro"
   }),

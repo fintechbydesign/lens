@@ -88,5 +88,5 @@ svg text {
   position: relative;
   top: -118px;
   right: -133px;
-  line-height: 3pt;
+  line-height: 3pt !important;
 }
