@@ -9,20 +9,33 @@ const getPastJourneys = () => {
 };
 
 const getStatsFromJourneys = () => {
+  // First stat: What Poll options were chosen
+
   const journeys = getPastJourneys();
-  let stats = [{Letter: "A" ,Frequency: 0},
-    {Letter: "B" ,Frequency: 0},
-    {Letter: "C" ,Frequency: 0},
-    {Letter: "D" ,Frequency: 0},];
+  let stats1 = [{Choice: "Strongly Agree" ,Frequency: 0},
+    {Choice: "Agree" ,Frequency: 0},
+    {Choice: "Indifferent" ,Frequency: 0},
+    {Choice: "Disagree" ,Frequency: 0},
+    {Choice: "Strongly Disagree", Frequency: 0}
+  ];
   journeys.map((val) => {
     if(val['page11']){
-      stats[0].Frequency += val['page11'].buttons[1] ? 1 : 0;
-      stats[1].Frequency += val['page11'].buttons[2] ? 1 : 0;
-      stats[2].Frequency += val['page11'].buttons[3] ? 1 : 0;
-      stats[3].Frequency += val['page11'].buttons[4] ? 1 : 0;
+      stats1[0].Frequency += val['page11'].buttons[1] ? 1 : 0;
+      stats1[1].Frequency += val['page11'].buttons[2] ? 1 : 0;
+      stats1[2].Frequency += val['page11'].buttons[3] ? 1 : 0;
+      stats1[3].Frequency += val['page11'].buttons[4] ? 1 : 0;
+      stats1[4].Frequency += val['page11'].buttons[5] ? 1 : 0;
     }
   });
-  return stats;
+  let stats2 = [{ Gotten: "Yes", Frequency: 0}, {Gotten: "No", Frequency: 0}];
+    journeys.map((val) => {
+        if(val['page6']){
+          val['page6'].jobGotten ? stats2[0].Frequency++ : stats2[1].Frequency++;
+        }
+    });
+
+  // Second stat: How often was the job gotten
+  return [stats1, stats2];
 };
 
 const saveJourney = async(journey) => {

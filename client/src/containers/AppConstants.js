@@ -51,7 +51,7 @@ const initialState = Object.freeze({
     on: defaultButtonFalseArray
   }),
   journey: {},
-  data: [],
+  data: [[],[]],
   persona: {
     name: "dummy",
     job: "dummy",
@@ -62,56 +62,56 @@ const initialState = Object.freeze({
   dataSource: [
         {
             actionDescription: 'Facebook',
-            options: {
-                1: {text: "likes", active: false},
-                2: {text: "comments", active: false},
-                3: {text: "posts", active: false},
-            },
+            options: Object.freeze({
+                1: Object.freeze({text: "likes", active: false}),
+                2: Object.freeze({text: "comments", active: false}),
+                3: Object.freeze({text: "posts", active: false}),
+            }),
             iconSrc: '/logos/facebook.svg',
         },
         {
             actionDescription: 'YouTube',
-            options: {
-                1: {text: "watch list", active: false},
-                2: {text: "subscription", active: false},
-                3: {text: "comments", active: false},
-            },
+            options: Object.freeze({
+                1: Object.freeze({text: "watch list", active: false}),
+                2: Object.freeze({text: "subscription", active: false}),
+                3: Object.freeze({text: "comments", active: false}),
+            }),
             iconSrc: '/logos/youtube.svg',
         },
         {
             actionDescription: 'Fitbit',
-            options: {
-                1: {text: "heart rate", active: false},
-                2: {text: "steps", active: false},
-                3: {text: "sleep", active: false},
-            },
+            options: Object.freeze({
+                1: Object.freeze({text: "heart rate", active: false}),
+                2: Object.freeze({text: "steps", active: false}),
+                3: Object.freeze({text: "sleep", active: false}),
+            }),
             iconSrc: '/logos/fitbit.svg',
         },
         {
             actionDescription: 'Instagram',
-            options: {
-                1: {text: "following", active: false},
-                2: {text: "posts", active: false},
-                3: {text: "hashtags", active: false},
-            },
+            options: Object.freeze({
+                1: Object.freeze({text: "following", active: false}),
+                2: Object.freeze({text: "posts", active: false}),
+                3: Object.freeze({text: "hashtags", active: false}),
+            }),
             iconSrc: '/logos/instagram.svg',
         },
         {
             actionDescription: 'Amazon',
-            options: {
-                1: {text: "purchases", active: false},
-                2: {text: "reviews", active: false},
-                3: {text: "delivery history", active: false},
-            },
+            options: Object.freeze({
+                1: Object.freeze({text: "purchases", active: false}),
+                2: Object.freeze({text: "reviews", active: false}),
+                3: Object.freeze({text: "delivery history", active: false}),
+            }),
             iconSrc: '/logos/amazon.svg',
         },
         {
             actionDescription: 'Uber',
-            options: {
-                1: {text: "location", active: false},
-                2: {text: "your rating", active: false},
-                3: {text: "tips", active: false},
-            },
+            options: Object.freeze({
+                1: Object.freeze({text: "location", active: false}),
+                2: Object.freeze({text: "your rating", active: false}),
+                3: Object.freeze({text: "tips", active: false}),
+            }),
             iconSrc: '/logos/fitbit.svg',
         },
     ],

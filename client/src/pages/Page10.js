@@ -5,7 +5,7 @@ import SpeechBubble from "../components/Speechbubble";
 
 const pollProperties = [
     {
-        pollChoice: 'Stringly Agree',
+        pollChoice: 'Strongly Agree',
         pollDescription: [
             "I would freely share all my",
             "personal data. For example, all of",

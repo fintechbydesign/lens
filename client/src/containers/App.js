@@ -52,6 +52,7 @@ class App extends Component {
   // Anywhere else case:
   // Sets the buttons.on array in the state
   buttonSelected (index) {
+    let newState = false;
     if(["poll","personas"].indexOf(this.state.buttons.enable[0]) !== -1){
       // The first value of the button is a string
       if(!this.state.buttons.on[index] && this.state.buttons.on.slice(1,10).some((i) => i)){
@@ -60,7 +61,7 @@ class App extends Component {
     }
     else if(this.state.buttons.enable[0] === "data"){
       // If the User hits 1-6, set the lastSelected button to active
-      let newState = this.state.dataSource;
+      newState = JSON.parse(JSON.stringify(this.state.dataSource));
         if(index < 7){
           // Reset all the sub datasources
           if(this.state.buttons.on[index]){
@@ -81,15 +82,28 @@ class App extends Component {
         }
     }
     if (this.state.buttons.enable[index]) {
-        const newOn = [...this.state.buttons.on];
-        newOn[index] = !newOn[index];
-        this.setState({
-            ...this.state,
-            buttons: {
-                ...this.state.buttons,
-                on: newOn
-            }
-        });
+        if(newState){
+            const newOn = [...this.state.buttons.on];
+            newOn[index] = !newOn[index];
+            this.setState({
+                ...this.state,
+                buttons: {
+                    ...this.state.buttons,
+                    on: newOn
+                },
+            dataSource: newState,
+            });
+        }else{
+            const newOn = [...this.state.buttons.on];
+            newOn[index] = !newOn[index];
+            this.setState({
+                ...this.state,
+                buttons: {
+                    ...this.state.buttons,
+                    on: newOn
+                },
+            });
+        }
     }
   }
   // Resets the interaction, shouldNotSave is a boolean that determines if the journey should not be saved on
@@ -155,6 +169,9 @@ class App extends Component {
       journey[nextPageName].choices = choices;
       journey[nextPageName].jobGotten = jG;
     }
+    if (nextPage === 11){
+        stateChange.data = getStatsFromJourneys();
+    }
 
     // Reset Interaction when it "loops"
     if (nextPage === 0){
@@ -168,7 +185,6 @@ class App extends Component {
           on: initialState.buttons.on,
           enable: [...pageStates[nextPage].buttonEnablement]
         },
-        data: getStatsFromJourneys(),
         ...stateChange,
       });
     }
@@ -228,8 +244,7 @@ class App extends Component {
         {this.renderButtons()}
         <div className='flexDynamicSize container flexContainerColumn'>
           <Pages buttons={this.state.buttons} data={this.state.data} persona={this.state.persona}
-                 choices={convertToChoices(this.state.persona,this.state.dataSource)} jobGotten={this.state.jobGotten}
-                 properties={this.state.dataSource}/>
+                 jobGotten={this.state.jobGotten} properties={this.state.dataSource}/>
           {this.renderInstruction()}
           {this.renderSubmit()}
         </div>

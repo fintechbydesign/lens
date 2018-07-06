@@ -13,6 +13,7 @@ import Page10 from '../pages/Page10';
 import Page11 from '../pages/Page11';
 import Page12 from '../pages/Page12';
 import './Pages.css';
+import {convertToChoices} from "../data/PersonaInfo";
 
 /*
  Page selection.
@@ -31,7 +32,7 @@ class Pages extends Component {
           <Page5 datasourceProperties={this.props.properties} buttons={this.props.buttons}/> {/* Data source choosing */}
           <Page6 /> {/* Data source loading */}
           <Page7 jobGotten={this.props.jobGotten}/> {/* Results Screen */}
-          <Page8 results={this.props.choices} jobGotten={this.props.jobGotten}/> {/* Detailed Results Screen */}
+          <Page8 results={convertToChoices(this.props.persona,this.props.properties)} jobGotten={this.props.jobGotten}/> {/* Detailed Results Screen */}
           <Page9 /> {/* Poll Intro */}
           <Page10 buttons={this.props.buttons}/> {/* Poll */}
           <Page11 data={this.props.data} /> {/* Data Viz */}
