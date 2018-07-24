@@ -5,14 +5,14 @@ import SpeechBubble from "../components/Speechbubble";
 //Home
 function Page0 (props) {
   return (
-    <div name ='page0' className='fullPage flexFixedSize flexContainerColumn'>
+      <div name ='page0' className='fullPage flexFixedSize flexContainerColumn'>
         <SpeechBubble top={false} text={[
-            "Hello Human!",
-            "Do you know what personal data makes",
-            "up your digital identity? Want to use",
-            "personal data to find a job? Click next.",
+          "Hello Human!",
+          "I'm Lens, nice to meet you. I can help",
+          "you build your digital identity.",
+          "Click Next to find out more.",
         ]}/>
-    </div>
+      </div>
   );
 }
 

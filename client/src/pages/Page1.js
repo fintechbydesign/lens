@@ -8,12 +8,13 @@ function Page1 (props) {
     <div name ='page1' className='fullPage flexFixedSize flexContainerRow Page1_container'>
       <div className='page1_text'>
           <SpeechBubble top={true} text={[
-              "You already have a digital identity.",
-              "Data is being captured about you every day",
-              "Some might be good and some might be bad..."
-          ]} class={"three-line-top"}/>
+              "Did you know you already have a digital identity?",
+              "Everything from your smartphone usage, yo your social",
+              "media activity captures data about you...",
+              "but how is it used?"
+          ]}/>
           <div className="heading centered fiftyfive">
-              What is personal data?
+              What is a digital identity?
           </div>
           <div className="text centered fiftyfive">
               At the heart of it, personal data is any data that can <br/>
