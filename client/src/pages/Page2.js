@@ -10,7 +10,7 @@ const personaProperties = [
         nameAge: 'Jeff, 23',
         location: 'Edinburgh, Scotland',
         currentJob: 'Philosophy Graduate',
-        description: "Is looking for a job in Education",
+        description: "Is looking for a job in education",
         avatarSrc: '/personas/jeff.svg',
     },
     {
@@ -63,10 +63,10 @@ function Page2 (props) {
             <SpeechBubble
                 top={true}
                 text={[
-                    "Now let’s get to the fun bit.",
-                    "Put yourself in someone else’s shoes and see if you can",
-                    "get them a new job.",
-                    "Pick a persona below by using the buttons on the left."
+                    "Even though I'm a trustworthy bot, I'm not allowed to",
+                    "capture any of your data (pesky human laws), so put",
+                    "yourself in someone else's shoes by choosing a persona.",
+                    "You can use the buttons on the left."
                 ]}
             />
             {personas}

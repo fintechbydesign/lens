@@ -17,8 +17,10 @@ function Page1 (props) {
               What is a digital identity?
           </div>
           <div className="text centered fiftyfive">
-              At the heart of it, personal data is any data that can <br/>
-              identify you. Some examples include:
+              Digital data sources are already used to build your <br/>
+              digital identity, painting a picture of who you are, <br/>
+              what you like, and how likely you are to behave in a <br/>
+              certain way. Some examples include:
           </div>
           <div className="icons">
               <div className="icon">
@@ -122,61 +124,22 @@ function Page1 (props) {
               currently using your data?
           </div>
           <div className="text centered fiftyfive">
-              Even if your personal data does not seem like it would <br/>
-              be useful for one controller, it can have a different <br/>
-              meaning in the hands of another. Some examples include:
-          </div>
-          <div className="text left_right">
-              <div className="right">
-                  <div className="subheading">
-                      Google
-                  </div>
-                  Your phone sends data about <br/>
-                  your location back to Google. <br/>
-                  This is combined with data <br/>
-                  from people around you to <br/>
-                  recognise traffic patterns.<br/><br/>
-                  <div className="subheading">
-                      Youtube
-                  </div>
-                  YouTube recommends videos <br/>
-                  that you may like, based on <br/>
-                  data collected on what you <br/>
-                  have watched before
-              </div>
-              <div className="vertical_line">
-
-              </div>
-              <div className="left">
-                  <div className="subheading">
-                      Facebook
-                  </div>
-                  Facebook shared your "public <br/>
-                  profile, page likes, birthday <br/>
-                  and current city" to a <br/>
-                  political organisation <br/><br/>
-                  <div className="subheading">
-                      NHS
-                  </div>
-                  The NHS collects health and care <br/>
-                  data from all NHS organisations, <br/>
-                  local authorities, and private <br/>
-                  hospitals. Research bodies can <br/>
-                  request access  to this data.
-              </div>
+              Google collects data about your location alongside<br/>
+              others around you to recognise traffic patterns.<br/><br/>
+              The NHS collects your health data and shares it with<br/>
+              other NHS organisations to improve the care and<br/>
+              treatment of other patients.
           </div>
           <div className="heading centered fiftyfive">
               How is this relevant <br/> to me?
           </div>
           <div className="text centered">
-              Europe centres primarily around the General Data <br/>
-              Protection Regulations (GDPR). GDPR is a regulation in EU <br/>
-              law on data protection and privacy for all individuals <br/>
-              within the European Union (EU) and the European Economic Area (EEA) <br/>
+              In the future, we see ownership of data shifting from <br/>
+              away from businesses into the hands of individuals, just  <br/>
+              like you.<br/>
               <br/>
-              Even if you don't live in the EU or EEA, you still <br/>
-              ahve a right to control your personal data and know how it's <br/>
-              being used.
+              With Lens, find out how you could take back control of <br/>
+              your own data and use it to apply for a job.
           </div>
       </div>
     </div>

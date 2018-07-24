@@ -16,7 +16,8 @@ const getStatsFromJourneys = () => {
     {Choice: "Agree" ,Frequency: 0},
     {Choice: "Indifferent" ,Frequency: 0},
     {Choice: "Disagree" ,Frequency: 0},
-    {Choice: "Strongly Disagree", Frequency: 0}
+    {Choice: "Strongly Disagree", Frequency: 0},
+    {Choice: "I don't know", Frequency: 0}
   ];
   journeys.map((val) => {
     if(val['page11']){
@@ -25,6 +26,7 @@ const getStatsFromJourneys = () => {
       stats1[2].Frequency += val['page11'].buttons[3] ? 1 : 0;
       stats1[3].Frequency += val['page11'].buttons[4] ? 1 : 0;
       stats1[4].Frequency += val['page11'].buttons[5] ? 1 : 0;
+      stats1[5].Frequency += val['page11'].buttons[6] ? 1 : 0;
     }
   });
   let total_stat1 = stats1.reduce((sum, stat) => sum + stat.Frequency,0);

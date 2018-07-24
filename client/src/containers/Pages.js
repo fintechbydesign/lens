@@ -31,8 +31,9 @@ class Pages extends Component {
                  hours={this.props.persona.hours} description={this.props.persona.description}/> {/* Job Found */}
           <Page5 datasourceProperties={this.props.properties} buttons={this.props.buttons}/> {/* Data source choosing */}
           <Page6 /> {/* Data source loading */}
-          <Page7 jobGotten={this.props.jobGotten}/> {/* Results Screen */}
-          <Page8 results={convertToChoices(this.props.persona,this.props.properties)} jobGotten={this.props.jobGotten}/> {/* Detailed Results Screen */}
+          <Page7 jobGotten={this.props.jobGotten} name={this.props.persona.name}/> {/* Results Screen */}
+          <Page8 results={convertToChoices(this.props.persona,this.props.properties)}
+                 jobGotten={this.props.jobGotten} name={this.props.persona.name}/> {/* Detailed Results Screen */}
           <Page9 /> {/* Poll Intro */}
           <Page10 buttons={this.props.buttons}/> {/* Poll */}
           <Page11 data={this.props.data} jobGotten={this.props.jobGotten} pollChoice={this.props.pollChoice}/> {/* Data Viz */}

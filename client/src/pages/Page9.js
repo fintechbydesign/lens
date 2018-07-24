@@ -6,10 +6,11 @@ function Page9 (props) {
     return (
         <div name ='page9' className='flexFixedSize flexContainerRow fullPage' id="page9">
             <SpeechBubble top={false} text={
-                ["After all that hard work, have you",
-                 "ever thought about sharing your own",
-                 "personal data?"]
-            } class={"three-line-center"}/>
+                ["That was just a bit of fun to show you",
+                 "how you could apply for a job in the",
+                 "future. How do you feel about sharing",
+                "your own personal digital data?"]
+            } />
         </div>
     );
 }

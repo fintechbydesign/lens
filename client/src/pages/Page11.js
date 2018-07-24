@@ -30,7 +30,7 @@ const chart2Properties = {
     yLabel : "Frequency",
     yTicks : [10,"%"],
     fill : "black",
-    margin : {top: 80, right: 20, bottom: 30, left: 40},
+    margin : {top: 80, right: 20, bottom: 50, left: 40},
 };
 
 function Page11 (props) {
@@ -38,8 +38,10 @@ function Page11 (props) {
     <div name ='page11' className='flexFixedSize flexContainerColumn fullPage'>
       <SpeechBubble top={true} text={[
           "Look how the other humans responded!",
-          "See how you compared with the blue column"
-      ]} class="two-line-top"/>
+          "Check out how many got the job how humans",
+          "feel about sharing personal digital data",
+          "Your results are marked in blue."
+      ]}/>
     <div className="heading centered">Did they get the job?</div>
     <BarChart
         {...chart1Properties} data={props.data[1]} jobGotten={props.jobGotten} />

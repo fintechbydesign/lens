@@ -22,7 +22,7 @@
     position: relative;
     top: -133px;
     right: -133px;
-    line-height: 3pt;
+    line-height: 3pt !important;
 }
 .text_center{
     position: relative;

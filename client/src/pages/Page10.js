@@ -7,42 +7,48 @@ const pollProperties = [
     {
         pollChoice: 'Strongly Agree',
         pollDescription: [
-            "I would freely share all my",
-            "personal data. For example, all of",
-            "my Facebook, Amazon and Instagram",
-            "data."],
+            "I would happily share all my",
+            "personal digital data. For example,",
+            "all of my Facebook, Amazon and",
+            "Instagram data."],
     },
     {
         pollChoice: "Agree",
         pollDescription: [
             "I would share some of my personal",
-            "data. For example, having control",
-            "picking only my Facebook posts and",
-            "Instagram hashtags."
+            "digital data. For example, choosing",
+            "to share only my Amazon reviews."
         ],
 
     },
     {
-        pollChoice: "Indifferent",
+        pollChoice: "Neutral",
         pollDescription: [
-            "I don’t know what sharing personal",
-            "data has to do with getting a job",
-            "or proving my identity."
+            "I would share some of my personal",
+            "digital data if I see a benefit."
         ],
     },
     {
         pollChoice: "Disagree",
         pollDescription: [
-            "I am hesitant to share any personal",
-            "data, even if it is only my Uber",
-            "rating or Fibit steps."
+            "I would only ever share a very",
+            "small amount of personal digital",
+            "data."
         ],
     },
     {
         pollChoice: "Strongly Disagree",
         pollDescription: [
-            "I would not share any of my",
-            "personal data."
+            "I would never not willingly share",
+            "any of my personal digital data for",
+            "any reason."
+        ],
+    },
+    {
+        pollChoice: "I don't know",
+        pollDescription: [
+            "I don't know if would share my",
+            "personal digital data."
         ],
     }
 ];
@@ -58,10 +64,11 @@ function Page10 (props) {
     return (
         <div name ='page10' className='flexFixedSize flexContainerColumn fullPage'>
             <SpeechBubble top={true} text={[
-                "Would you be willing to share your personal data",
-                "to get a job, prove your identity, or with other",
-                "services and systems?"
-            ]} class={"three-line-top"}/>
+                "I would share my personal data to get a job",
+                "prove my identity, or even apply for a",
+                "mortgage (bots need houses, too).",
+                "How do you feel about it?"
+            ]}/>
             {poll}
         </div>
     );

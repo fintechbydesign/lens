@@ -15,8 +15,10 @@ function Page4 (props) {
     return (
         <div name ='page4' className='flexFixedSize flexContainerColumn fullPage' id="page4">
             <SpeechBubble top={true} text={[
-                `I've found the perfect job for ${props.name}!`,
-            ]} class={"one-line-top"}/>
+                `Nice to meet you ${props.name}.`,
+                "I think I've found the perfect job for you!",
+                "Check it out."
+            ]} class={"three-line-top"}/>
             <div className={"jobDescription"}>
                 <p className={"heading"}>{props.job}</p>
                 <div className={"text"}>

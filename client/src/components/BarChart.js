@@ -8,6 +8,48 @@ import './BarChart.css'
 class BarChart extends Component {
   classFunction_job = d => ((d.Gotten === "Yes" && this.props.jobGotten) || (d.Gotten === "No"  && !this.props.jobGotten)) ? "bar" : "bar_inactive";
   classFunction_choice = d => (d.Choice === this.props.pollChoice) ? "bar" : "bar_inactive";
+  wrap = (text, width) => {
+
+        text.each(function() {
+
+            let breakChars = ['/', '&', '-'],
+                text = select(this),
+                textContent = text.text(),
+                spanContent;
+
+            breakChars.forEach(char => {
+                // Add a space after each break char for the function to use to determine line breaks
+                textContent = textContent.replace(char, char + ' ');
+            });
+
+            let words = textContent.split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                x = text.attr('x'),
+                y = text.attr('y'),
+                dy = parseFloat(text.attr('dy') || 0),
+                tspan = text.text(null).append('tspan').attr('x', x).attr('y', y).attr('dy', dy + 'em');
+
+            while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(' '));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    spanContent = line.join(' ');
+                    breakChars.forEach(char => {
+                        // Remove spaces trailing breakChars that were added above
+                        spanContent = spanContent.replace(char + ' ', char);
+                    });
+                    tspan.text(spanContent);
+                    line = [word];
+                    tspan = text.append('tspan').attr('x', x).attr('y', y).attr('dy', ++lineNumber * lineHeight + dy + 'em').text(word);
+                }
+            }
+        });
+
+    } ;
 
   constructor(props){
     super(props);
@@ -43,10 +85,6 @@ class BarChart extends Component {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    g.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(axisBottom(xScale));
 
     g.append("g")
         .attr("class", "axis axis--y")
@@ -90,6 +128,13 @@ class BarChart extends Component {
         .attr('rx',15)
         .attr('ry',15)
         .attr('height', d => height - yScale(y(d)));
+
+      g.append("g")
+          .attr("class", "axis axis--x")
+          .attr("transform", "translate(0," + height + ")")
+          .call(axisBottom(xScale))
+          .selectAll(".tick text")
+          .call(this.wrap, xScale.bandwidth());
   }
   render() {
     return <svg ref={node => this.node = node}
