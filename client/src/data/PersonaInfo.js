@@ -262,7 +262,7 @@ export function getPersonaFromIndex(index){
 
 function calculateScore(points){
   // If any of the choices contain an automatic fail
-  if(points.some(point => point === "F")){
+  if(points.some(point => point === "F") || points.length === 0){
     return -1;
   }
   return points.reduce((sum, x) => sum + x);
