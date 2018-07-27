@@ -4,7 +4,7 @@ import SpeechBubble from "../components/Speechbubble";
 import Result from "../components/Result";
 
 function Page8 (props) {
-  const text = props.jobGotten ? [
+  const text = !props.jobGotten ? [
     `Hard luck ${props.name}, something in your data`,
     "told me you weren't right for this role.",
     "Here's why I didn't think you were a suitable candidate."

@@ -9,8 +9,8 @@ function Page1 (props) {
       <div className='page1_text'>
           <SpeechBubble top={true} text={[
               "Did you know you already have a digital identity?",
-              "Everything from your smartphone usage, yo your social",
-              "media activity captures data about you...",
+              "Everything from your smartphone usage, to your social",
+              "media activity, captures data about you...",
               "but how is it used?"
           ]}/>
           <div className="heading centered fiftyfive">
@@ -124,8 +124,8 @@ function Page1 (props) {
               currently using your data?
           </div>
           <div className="text centered fiftyfive">
-              Google collects data about your location alongside<br/>
-              others around you to recognise traffic patterns.<br/><br/>
+              Google collects data about your location, alongside<br/>
+              others around you, to recognise traffic patterns.<br/><br/>
               The NHS collects your health data and shares it with<br/>
               other NHS organisations to improve the care and<br/>
               treatment of other patients.
@@ -134,7 +134,7 @@ function Page1 (props) {
               How is this relevant <br/> to me?
           </div>
           <div className="text centered">
-              In the future, we see ownership of data shifting from <br/>
+              In the future, we see ownership of data shifting <br/>
               away from businesses into the hands of individuals, just  <br/>
               like you.<br/>
               <br/>

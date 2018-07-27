@@ -14,7 +14,7 @@ const getStatsFromJourneys = () => {
   const journeys = getPastJourneys();
   let stats1 = [{Choice: "Strongly Agree" ,Frequency: 0},
     {Choice: "Agree" ,Frequency: 0},
-    {Choice: "Indifferent" ,Frequency: 0},
+    {Choice: "Neutral" ,Frequency: 0},
     {Choice: "Disagree" ,Frequency: 0},
     {Choice: "Strongly Disagree", Frequency: 0},
     {Choice: "I don't know", Frequency: 0}

@@ -10,11 +10,11 @@ function Page7 (props) {
                 !props.jobGotten ? [`Sorry ${props.name}, you didn't`,
                     "get the job this time. Click Next to",
                 "find out why I didn't think you were",
-                "the perfect candidate"] :
+                "the perfect candidate."] :
                     [`Great news ${props.name}, you`,
                     "got the job! Click Next to find out",
                     "why I thought you were the",
-                    "perfect candidate"]
+                    "perfect candidate."]
             }/>
         </div>
     );

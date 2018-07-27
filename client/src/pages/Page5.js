@@ -15,7 +15,7 @@ function Page5 (props) {
         <div name ='page5' className='flexFixedSize flexContainerColumn fullPage' id="page5">
             <SpeechBubble top={true} text={[
                 "Which data do you want to use to apply for the job?",
-                "Use the green buttons to toggle the sources.",
+                "Use the green buttons to choose the sources.",
                 "Use the blue buttons to choose which data.",
                 "Make sure you use both sets of buttons, then submit!"
             ]}/>

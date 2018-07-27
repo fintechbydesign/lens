@@ -44,7 +44,7 @@ class BarChart extends Component {
                     });
                     tspan.text(spanContent);
                     line = [word];
-                    tspan = text.append('tspan').attr('x', x).attr('y', y).attr('dy', ++lineNumber * lineHeight + dy + 'em').text(word);
+                    tspan = text.append('tspan').attr('x', x - 10).attr('y', y).attr('dy', ++lineNumber * lineHeight + dy + 'em').text(word);
                 }
             }
         });
@@ -104,7 +104,7 @@ class BarChart extends Component {
     g.selectAll('text.label')
         .attr("x", d => {
           if (d.Choice){
-          return xScale(x(d)) + 50
+          return xScale(x(d)) + 37
         } else{
           return xScale(x(d)) + 70
         }
@@ -118,7 +118,7 @@ class BarChart extends Component {
         .attr("class", this.classFunction)
         .attr('x', d => {
             if (d.Choice){
-                return xScale(x(d)) + 45
+                return xScale(x(d)) + 28
             } else{
                 return xScale(x(d)) + 70
             }

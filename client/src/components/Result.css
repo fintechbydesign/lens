@@ -65,8 +65,12 @@
 }
 
 .results_options li{
+     margin-bottom: 12px;
+     list-style: none;
+ }
+
+.results_options p{
     margin-bottom: 12px;
-    list-style: none;
 }
 
 .result_button {
