@@ -13,6 +13,45 @@ const socketsOptions = {
   serveClient: false
 };
 
+const restartIfNecessary = (key) => {
+  if (key === 'uc: Got hangup signal') {
+    console.log('arduino disconnection detected, reconnecting...');
+    initSerialPort();
+    return true;
+  }
+  return false;
+};
+
+const initSerialPort = () => {
+  const device = process.argv[2];
+  const serialConnection = new serialPort(device, {
+    baudRate: 9600
+  });
+  const parser = serialConnection.pipe(new serialPort.parsers.ByteLength({length: 8}));
+
+  serialConnection.open(function () {
+    console.log('open');
+
+    serialConnection.on('data', function (data) {
+      const key = new Buffer(data).toString('utf8');
+      console.log('data received: ' + key);
+      if (!restartIfNecessary(key)) {
+        socketsServer.emit('buttonPress', {key});
+      }
+    });
+    serialConnection.on('error', function (data) {
+      let buff = new Buffer(data);
+      console.log('error received: ' + buff.toString('utf8'));
+    });
+  });
+
+  //error handling
+  serialConnection.on("error", function () {
+    console.error("Can't establish serial connection with " + process.argv[2]);
+    process.exit(1);
+  });
+};
+
 // set up http and ws server
 const app = express();
 const httpServer = http.createServer(app);
@@ -22,50 +61,9 @@ const socketsServer = io(httpServer, socketsOptions);
 const webRoot = path.resolve(__dirname, '../client/build');
 app.use("/", express.static(webRoot));
 
-// set up for console input
-// const stream = process.stdin;
-// readLine.emitKeypressEvents(stream);
-// if (stream.isTTY) {
-//   stream.setRawMode(true);
-// }
-// stream.on('keypress', (str, key) => {
-//   const { ctrl, name } = key;
-//   if (ctrl && name === 'c') {
-//     console.log('Closing server');
-//     process.exit();
-//   } else {
-//     console.log(`keypress: ${name}`);
-//     socketsServer.emit('buttonPress', {key: name});
-//   }
-// });
-//initialize serial connection with a single byte parser
-const ByteLength = serialPort.parsers.ByteLength;
-let serialConnection = new serialPort(process.argv[2], {
-  baudRate: 9600
-});
-const parser = serialConnection.pipe(new ByteLength({length: 8}));
+// initialize serial connection with a single byte parser
+initSerialPort();
 
-serialConnection.open(function () {
-  console.log('open');
-
-  serialConnection.on('data', function(data) {
-    let buff = new Buffer(data);
-    console.log('data received: ' + buff.toString('utf8'));
-    socketsServer.emit('buttonPress', {key: buff.toString('utf8')});
-  });
-  serialConnection.on('error', function(data) {
-    let buff = new Buffer(data);
-    console.log('error received: ' + buff.toString('utf8'));
-  });
-});
-
-
-
-//error handling
-serialConnection.on("error", function () {
-  console.error("Can't establish serial connection with " + process.argv[2]);
-  process.exit(1);
-});
 
 // start server
 httpServer.listen(config.port, () => {
