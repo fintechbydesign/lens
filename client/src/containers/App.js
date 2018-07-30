@@ -55,10 +55,12 @@ class App extends Component {
     let newState = false;
     let radioButtons = false;
     if(["poll","personas"].indexOf(this.state.buttons.enable[0]) !== -1){
+      /*
       // The first value of the button is a string
       if(!this.state.buttons.on.slice(1,10).some((i) => i)){
         return;
       }
+      */
       radioButtons = true;
     }
     else if(this.state.buttons.enable[0] === "data"){
@@ -90,6 +92,11 @@ class App extends Component {
         newOn.fill(false, 1);
       }
       newOn[index] = newOnAtIndex;
+      if (radioButtons) {
+        if(!newOn.slice(1,10).some((i) => i)){
+          return;
+        }
+      }
       if(newState){
         this.setState({
           ...this.state,
