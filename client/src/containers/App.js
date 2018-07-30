@@ -53,11 +53,13 @@ class App extends Component {
   // Sets the buttons.on array in the state
   buttonSelected (index) {
     let newState = false;
+    let radioButtons = false;
     if(["poll","personas"].indexOf(this.state.buttons.enable[0]) !== -1){
       // The first value of the button is a string
       if(!this.state.buttons.on[index] && this.state.buttons.on.slice(1,10).some((i) => i)){
         return;
       }
+      radioButtons = true;
     }
     else if(this.state.buttons.enable[0] === "data"){
       // If the User hits 1-6, set the lastSelected button to active
@@ -82,28 +84,29 @@ class App extends Component {
         }
     }
     if (this.state.buttons.enable[index]) {
-        if(newState){
-            const newOn = [...this.state.buttons.on];
-            newOn[index] = !newOn[index];
-            this.setState({
-                ...this.state,
-                buttons: {
-                    ...this.state.buttons,
-                    on: newOn
-                },
-            dataSource: newState,
-            });
-        }else{
-            const newOn = [...this.state.buttons.on];
-            newOn[index] = !newOn[index];
-            this.setState({
-                ...this.state,
-                buttons: {
-                    ...this.state.buttons,
-                    on: newOn
-                },
-            });
-        }
+      const newOn = [...this.state.buttons.on];
+      if (radioButtons) {
+        newOn.fill(false);
+      }
+      newOn[index] = !newOn[index];
+      if(newState){
+        this.setState({
+          ...this.state,
+          buttons: {
+              ...this.state.buttons,
+              on: newOn
+          },
+        dataSource: newState,
+        });
+      }else{
+        this.setState({
+          ...this.state,
+          buttons: {
+              ...this.state.buttons,
+              on: newOn
+          },
+        });
+      }
     }
   }
   // Resets the interaction, shouldNotSave is a boolean that determines if the journey should not be saved on
