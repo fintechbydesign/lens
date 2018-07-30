@@ -13,7 +13,7 @@ const socketsOptions = {
   serveClient: false
 };
 
-// receive data on serial port
+// receive Serial port data
 const receiveData = (socketsServer, data) => {
   const key = new Buffer(data).toString('utf8');
   console.log('data received: ' + key);
@@ -31,7 +31,7 @@ const initSerialPort = (socketsServer ) => {
   const serialConnection = new serialPort(device, {
     baudRate: 9600
   });
-  const parser = serialConnection.pipe(new serialPort.parsers.ByteLength({length: 8}));
+  // const parser = serialConnection.pipe(new serialPort.parsers.ByteLength({length: 8}));
 
   serialConnection.open(function () {
     console.log('open');
@@ -52,7 +52,7 @@ const socketsServer = io(httpServer, socketsOptions);
 const webRoot = path.resolve(__dirname, '../client/build');
 app.use("/", express.static(webRoot));
 
-// start serial port
+// start serial port listening
 initSerialPort(socketsServer);
 
 // start server
