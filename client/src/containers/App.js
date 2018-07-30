@@ -56,7 +56,7 @@ class App extends Component {
     let radioButtons = false;
     if(["poll","personas"].indexOf(this.state.buttons.enable[0]) !== -1){
       // The first value of the button is a string
-      if(!this.state.buttons.on[index] && this.state.buttons.on.slice(1,10).some((i) => i)){
+      if(this.state.buttons.on.slice(1,10).some((i) => i)){
         return;
       }
       radioButtons = true;
