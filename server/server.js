@@ -15,7 +15,7 @@ const socketsOptions = {
 
 const reconnectSerialPort = (socketsServer) => {
   console.error("Serial connection hang up - reconnecting...");
-  initSerialPort(socketsServer);
+  setTimeout(initSerialPort.bind(null, socketsServer), 250);
 };
 
 // initialize serial connection with a single byte parser
