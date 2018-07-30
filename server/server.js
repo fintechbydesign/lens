@@ -62,6 +62,10 @@ serialConnection.on("error", function () {
   console.error("Can't establish serial connection with " + process.argv[2]);
   process.exit(1);
 });
+serialConnection.on("close", function () {
+  console.error("Serial connection closed");
+  process.exit(1);
+});
 
 // start server
 httpServer.listen(config.port, () => {
