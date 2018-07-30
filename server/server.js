@@ -13,9 +13,12 @@ const socketsOptions = {
   serveClient: false
 };
 
-const reconnectSerialPort = (socketsServer) => {
-  console.error("Serial connection hang up - reconnecting...");
-  setTimeout(initSerialPort.bind(null, socketsServer), 250);
+const reconnectSerialPort = (socketsServer, msg) => {
+  console.error(msg);
+  setTimeout(() => {
+    console.log('Reconnecting...');
+    initSerialPort(socketsServer)
+  }, 250 );
 };
 
 // initialize serial connection with a single byte parser
@@ -34,10 +37,11 @@ const initSerialPort = (socketsServer ) => {
       socketsServer.emit('buttonPress', {key});
     });
   });
-  serialConnection.on("close", reconnectSerialPort.bind(null, socketsServer));
-  serialConnection.on("error", () => {
-    console.error("Can't establish serial connection with " + process.argv[2]);
-    process.exit(1);
+  serialConnection.on("close", () => {
+    reconnectSerialPort(socketsServer, "Serial connection hang up");
+  });
+  serialConnection.on("error", (error) => {
+    reconnectSerialPort(socketsServer, `Can't establish serial connection with ${process.argv[2]}: error: ${error}`);
   });
 };
 
