@@ -85,10 +85,11 @@ class App extends Component {
     }
     if (this.state.buttons.enable[index]) {
       const newOn = [...this.state.buttons.on];
+      const newOnAtIndex = !newOn[index];
       if (radioButtons) {
         newOn.fill(false);
       }
-      newOn[index] = !newOn[index];
+      newOn[index] = newOnAtIndex;
       if(newState){
         this.setState({
           ...this.state,
