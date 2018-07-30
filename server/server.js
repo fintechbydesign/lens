@@ -53,6 +53,10 @@ serialConnection.open(function () {
     console.log('data received: ' + buff.toString('utf8'));
     socketsServer.emit('buttonPress', {key: buff.toString('utf8')});
   });
+  serialConnection.on('error', function(data) {
+    let buff = new Buffer(data);
+    console.log('error received: ' + buff.toString('utf8'));
+  });
 });
 
 
