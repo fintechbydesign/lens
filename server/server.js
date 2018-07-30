@@ -5,6 +5,8 @@ const readLine = require('readline');
 const path = require('path');
 const serialPort = require("serialport");
 
+let failedReconnects = 0;
+
 const config = {
   port: 1971
 };
@@ -31,6 +33,7 @@ const initSerialPort = (socketsServer ) => {
 
   serialConnection.open(function () {
     console.log('open');
+    failedReconnects = 0;
     serialConnection.on('data', (data) => {
       const key = new Buffer(data).toString('utf8');
       console.log('data received: ' + key);
@@ -41,7 +44,13 @@ const initSerialPort = (socketsServer ) => {
     reconnectSerialPort(socketsServer, "Serial connection hang up");
   });
   serialConnection.on("error", (error) => {
-    reconnectSerialPort(socketsServer, `Can't establish serial connection with ${process.argv[2]}: error: ${error}`);
+    failedReconnects = failedReconnects + 1;
+    if (failedReconnects < 120) {
+      reconnectSerialPort(socketsServer, `Can't establish serial connection with ${process.argv[2]}: error: ${error}`);
+    } else {
+      console.error('Failed to reconnect after 30 seconds, exiting');
+      process.exit(1);
+    }
   });
 };
 
