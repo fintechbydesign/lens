@@ -12,7 +12,7 @@ function Result (props) {
               <div className={"result_button_selected"}><p>&#60;</p></div>
                 <div className='flexDynamicSize result_text'>
                     <img src={props.iconSrc}  alt='datasource icon' className='result_image' />
-                    <div className={props.options[i].active ? "heading result_name_active" : "heading result_name"}>
+                    <div className={props.active ? "heading result_name_active" : "heading result_name"}>
                         {props.actionDescription}
                     </div>
                     <div className="results_options text">

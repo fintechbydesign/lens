@@ -9,8 +9,12 @@
 .result_name_active{
     display: inline-block;
     position: relative;
-    top: -16px;
+    top: -8px;
 }
+.results_options{
+    widows: inherit;
+}
+
 .result_name{
     display: inline-block;
 }
@@ -75,7 +79,6 @@
  }
 
 .results_options p{
-    margin: 0 0 3px 0;
 }
 
 .result_button {
@@ -87,7 +90,6 @@
     top: -85px;
     position: relative;
     font-size: 30pt;
-
 }
 
 .result_button p {
