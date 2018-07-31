@@ -6,6 +6,11 @@
     height: 230px;
 }
 
+.result_name_active{
+    display: inline-block;
+    position: relative;
+    top: -16px;
+}
 .result_name{
     display: inline-block;
 }
@@ -34,7 +39,7 @@
 .result_option{
     float: left;
     display: inline-block;
-    margin: 0 15px 0 0;
+    margin: 0 15px 0 54px !important;
     color: var(--choice-light-blue);
     border-radius: 50%;
     width: 36px;
@@ -70,7 +75,7 @@
  }
 
 .results_options p{
-    margin-bottom: 12px;
+    margin: 0 0 3px 0;
 }
 
 .result_button {

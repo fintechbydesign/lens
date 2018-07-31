@@ -185,14 +185,14 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 8,
-    instruction: "Click next for one final questions",
+    instruction: defaultInstruction,
     saveButtons: false,
     pageName: "Detailed results screen"
   }),
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 9,
-    instruction: "Submit your application",
+    instruction: "Click next for one final question.",
     saveButtons: false,
     pageName: "Poll Intro"
   }),

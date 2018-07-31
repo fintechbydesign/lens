@@ -6,8 +6,8 @@ import Result from "../components/Result";
 function Page8 (props) {
   const text = !props.jobGotten ? [
     `Hard luck ${props.name}, something in your data`,
-    "told me you weren't right for this role.",
-    "Here's why I didn't think you were a suitable candidate."
+    "told me you weren't right for this role. Here's why",
+    "I didn't think you were a suitable candidate."
   ] : [
     `Good work ${props.name}, I like what your data`,
     "says about you. Here's why I thought you were the",

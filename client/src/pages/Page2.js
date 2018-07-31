@@ -24,7 +24,7 @@ const personaProperties = [
         nameAge: 'Julie, 53',
         location: 'Boston, MA',
         currentJob: 'Unemployed',
-        description: "Is looking for an office Job",
+        description: "Is looking for an office job",
         avatarSrc: '/personas/julie.svg',
     },
     {
