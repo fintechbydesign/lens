@@ -45,7 +45,7 @@ function Page11 (props) {
     <div className="heading centered">Did they get the job?</div>
     <BarChart
         {...chart1Properties} data={props.data[1]} jobGotten={props.jobGotten} />
-    <div className="heading centered">Would you share your data?</div>
+    <div className="heading centered bar2">Would you share your data?</div>
     <BarChart
         {...chart2Properties} data={props.data[0]} pollChoice={props.pollChoice}/>
     </div>

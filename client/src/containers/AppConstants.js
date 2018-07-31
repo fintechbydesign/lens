@@ -133,14 +133,14 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 1,
-    instruction: "Click next to start exploring personal data",
+    instruction: "Hit the white button to explore",
     saveButtons: false,
     pageName: "Intro"
   }),
   Object.freeze({
     buttonEnablement: personaButtonArray,
     index: 2,
-    instruction: 'Click next to find a job',
+    instruction: 'Hit the white button to find a job',
     saveButtons: true,
     block : true,
     pageName: "Persona Choosing"
@@ -156,14 +156,14 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 4,
-    instruction: 'Click next to apply',
+    instruction: 'Hit the white button to apply',
     saveButtons: false,
     pageName: "Job Found"
   }),
   Object.freeze({
     buttonEnablement: dataButtonTrueArray,
     index: 5,
-    instruction: 'Submit your application',
+    instruction: 'Hit the white button to submit',
     saveButtons: true,
     pageName: "Data sources choosing"
   }),
@@ -192,14 +192,14 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 9,
-    instruction: "Click next for one final question.",
+    instruction: "Hit the white button for one final question",
     saveButtons: false,
     pageName: "Poll Intro"
   }),
   Object.freeze({
     buttonEnablement: pollButtonArray,
     index: 10,
-    instruction: 'Click next to see what other humans said',
+    instruction: defaultInstruction,
     saveButtons: true,
     block : true,
     pageName:"Poll"
@@ -214,7 +214,7 @@ const pageStates = Object.freeze([
   Object.freeze({
     buttonEnablement: defaultButtonFalseArray,
     index: 12,
-    instruction: 'Start Over',
+    instruction: 'Hit the white button to start over',
     saveButtons: false,
     pageName: "Goodbye"
   }),

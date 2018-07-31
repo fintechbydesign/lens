@@ -35,7 +35,7 @@
 
 .source_option{
     display: inline-block;
-    margin: 0 15px 0 0; !important;
+    margin: 0 15px 0 0 !important;
     color: var(--choice-light-blue);
     border-radius: 50%;
     width: 36px;
