@@ -38,7 +38,7 @@ function Page11 (props) {
     <div name ='page11' className='flexFixedSize flexContainerColumn fullPage'>
       <SpeechBubble top={true} text={[
           "Look how the other humans responded!",
-          "Check out how many got the job how humans",
+          "Check out how many got the job and how humans",
           "feel about sharing personal digital data",
           "Your results are marked in blue."
       ]}/>

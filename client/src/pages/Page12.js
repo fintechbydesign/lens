@@ -7,7 +7,7 @@ function Page12 (props) {
         <div name ='page12' className='flexFixedSize flexContainerRow fullPage' id="page12">
            <SpeechBubble top={false} text ={["I get lonely sometimes, so thanks for",
            "chatting with me! Don't forget the power",
-               "of your personal digital data. Goodbye"]}/>
+               "of your personal digital data. Goodbye"]} class={"three-line-center"}/>
         </div>
     );
 }

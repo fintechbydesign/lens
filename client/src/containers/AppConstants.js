@@ -21,7 +21,7 @@ const slowScrollOptions = Object.freeze({
 });
 
 // The default instruction is "Click Next"
-const defaultInstruction = "Click Next";
+const defaultInstruction = "Hit the white button to continue";
 
 const defaultButtonFalseArray = Object.freeze([
   'dummy', false, false, false, false, false, false, false, false, false
